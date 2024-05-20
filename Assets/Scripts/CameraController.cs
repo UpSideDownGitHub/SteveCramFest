@@ -11,6 +11,7 @@ public class CameraController : MonoBehaviour
     public float minYBound;
     public float maxYBound;
     public float camMaxSize;
+    public float camMinSize;
 
     public float smoothTime = 0.15f; 
     private Vector3 cameraVelocity;
@@ -26,7 +27,7 @@ public class CameraController : MonoBehaviour
         float extentY = Mathf.Max(Mathf.Abs(players[0].transform.position.y - centerPoint.y), Mathf.Abs(players[1].transform.position.y - centerPoint.y));
 
         // Calculate required zoom to fit players with some buffer
-        float desiredOrthographicSize = Mathf.Max(extentX, extentY) + 1f; // Add a buffer of 1 unit
+        float desiredOrthographicSize = Mathf.Max(extentX, extentY) + camMinSize; // Add a buffer of 1 unit
 
         // Clamp zoom to avoid extreme values
         desiredOrthographicSize = Mathf.Clamp(desiredOrthographicSize, cam.nearClipPlane + 0.1f, cam.farClipPlane - 0.1f);
