@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering.Universal;
@@ -102,6 +103,12 @@ public class Player : MonoBehaviour
 
     public void Update()
     {
+        if (_shootPressed)
+            ShootPressed();
+    }
+
+    public void FixedUpdate()
+    {
         if (movementSpeed != 0)
         {
             if (_movement < 0)
@@ -113,9 +120,6 @@ public class Player : MonoBehaviour
             rb.AddForce(transform.right * movementSpeed * _movement * Time.deltaTime, ForceMode2D.Impulse);
             rb.velocity = new Vector2(Mathf.Abs(rb.velocity.x) > maxSpeed ? rb.velocity.x > 0 ? maxSpeed : -maxSpeed : rb.velocity.x, rb.velocity.y);
         }
-
-        if (_shootPressed)
-            ShootPressed();
     }
 
     public IEnumerator DownPressed()

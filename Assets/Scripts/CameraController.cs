@@ -17,7 +17,7 @@ public class CameraController : MonoBehaviour
     private Vector3 cameraVelocity;
     private float velocity;
 
-    private void LateUpdate()
+    private void FixedUpdate()
     {
         if (players.Length == 2)
         {
