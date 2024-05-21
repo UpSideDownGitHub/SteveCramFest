@@ -9,6 +9,7 @@ TagManager:
   - LevelManager
   - Enemy
   - Pickup
+  - Hazard
   layers:
   - Default
   - TransparentFX
