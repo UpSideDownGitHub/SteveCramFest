@@ -27,6 +27,7 @@ public class PlayerAttack : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             collision.GetComponent<Enemy>().TakeDamage(baseAttackDamage);
+            player.AddPoints(100);
         }
         else if (collision.gameObject.layer == bulletLayer)
         {
@@ -44,6 +45,7 @@ public class PlayerAttack : MonoBehaviour
                 var dir = -bulletRB.velocity;
                 SpawnBullet(dir, bulletProj.transform.position); 
             }
+            player.AddPoints(50);
             Destroy(collision.gameObject);
         }
         DiableAttack();

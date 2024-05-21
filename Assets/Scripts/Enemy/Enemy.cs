@@ -31,7 +31,6 @@ public class Enemy : MonoBehaviour
     public float playerCheckingDistance;
     public float playerSeenMultiplyer;
 
-
     [Header("Shooting")]
     public bool shoots;
     public GameObject bullet;
@@ -39,13 +38,15 @@ public class Enemy : MonoBehaviour
     public float fireRate;
     public float fireForce;
     private float _timeOfNextFire;
-
     private float _scale;
+
+    [Header("Multiplayer")]
+    public float playerSearchTime;
+    private float _timeToSearchForNextPlayer;
 
     public void Start()
     {
-        if (!levelManager)
-            levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
+            levelManager = GetComponentInParent<LevelManager>();
         _scale = transform.localScale.x;
         curHealth = maxHealth;
         player = GameObject.FindGameObjectWithTag("Player");
@@ -58,11 +59,37 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    public GameObject GetClosestPlayer()
+    {
+        var players = GameObject.FindGameObjectsWithTag("Player");
+        var closest = float.MaxValue;
+        GameObject closestPlayer = null;
+        foreach (var player in players)
+        {
+            var dist = Vector2.Distance(transform.position, player.transform.position);
+            if (dist < closest)
+            {
+                closest = dist;
+                closestPlayer = player;
+            }
+        }
+        return closestPlayer;
+    }
+
     public void Update()
     {
+        if (Time.time > _timeToSearchForNextPlayer)
+        {
+            _timeToSearchForNextPlayer = Time.time + playerSearchTime;
+            player = GetClosestPlayer();
+        }
+
+        if (player == null)
+            return;
+
         if (flying)
         {
-            if (Time.time > _startTime && player)
+            if (Time.time > _startTime)
             {
                 agent.SetDestination(player.transform.position);
             }

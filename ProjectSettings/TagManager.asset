@@ -10,6 +10,8 @@ TagManager:
   - Enemy
   - Pickup
   - Hazard
+  - UI0
+  - UI1
   layers:
   - Default
   - TransparentFX
@@ -19,7 +21,7 @@ TagManager:
   - UI
   - Platform
   - Bullets
-  - 
+  - Player
   - 
   - 
   - 
