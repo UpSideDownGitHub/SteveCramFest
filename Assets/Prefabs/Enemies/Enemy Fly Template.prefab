@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 5381874566262567711}
   - component: {fileID: 5828555433620388341}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Enemy Fly Template
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
