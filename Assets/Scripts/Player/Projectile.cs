@@ -2,15 +2,22 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    public bool playerOwned;
     public float damage;
 
-    public void OnTriggerEnter2D(Collider2D collision)
+    public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.CompareTag("Enemy"))
+        if (playerOwned)
         {
-            collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
+            if (collision.gameObject.CompareTag("Enemy"))
+            {
+                collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
+                Destroy(gameObject);
+            }
+        }
+        else if (collision.gameObject.CompareTag("Player"))
+        {
 
-            Destroy(gameObject);
         }
     }
 }

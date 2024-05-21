@@ -5,6 +5,7 @@ using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class Player : MonoBehaviour
@@ -13,7 +14,7 @@ public class Player : MonoBehaviour
     public Collider2D col;
 
     [Header("Jumping")]
-    public bool grounded;
+    public float floorCheckDistance = 0.1f;
     public float jumpForce;
 
     [Header("Movement")]
@@ -25,14 +26,18 @@ public class Player : MonoBehaviour
     public float passthroughTime;
 
     [Header("Spells (Attacking)")]
-    public Spell[] spells;
+    public GameObject sword;
+    public float attackTime;
+    private float _timeOfNextAttack;
+
+    [Header("Health")]
+    public float maxHealth;
+    public float currentHealth;
 
     private float _movement;
     private Collider2D _currentPlatform;
     private float _scale;
-
     [SerializeField] private bool _downPressed;
-    [SerializeField] private bool _upPressed;
     [SerializeField] private bool _shootPressed;
 
 
@@ -47,32 +52,16 @@ public class Player : MonoBehaviour
     public void JumpPressed(InputAction.CallbackContext ctx)
     {
         if (ctx.action.WasPressedThisFrame())
-        {
-            if (_downPressed)
-            {
-                StopCoroutine(DownPressed());
-                StartCoroutine(DownPressed());
-            }
-            else
-                JumpPressed();
-        }
-    }
-
-    public void UpPressed(InputAction.CallbackContext ctx)
-    {
-        if (ctx.action.WasPressedThisFrame())
-            _upPressed = true;
-        else if (ctx.action.WasReleasedThisFrame())
-            _upPressed = false;
-
+            JumpPressed();
     }
 
     public void DownPressed(InputAction.CallbackContext ctx)
     {
-        if (ctx.action.WasPressedThisFrame())
-            _downPressed = true;
-        else if (ctx.action.WasReleasedThisFrame())
-            _downPressed = false;
+        if (ctx.action.WasPressedThisFrame() && _currentPlatform)
+        {
+            StopCoroutine("PassThrough");
+            StartCoroutine(PassThrough(_currentPlatform));
+        }
     }
 
     public void MovementPressed(InputAction.CallbackContext ctx)
@@ -80,26 +69,40 @@ public class Player : MonoBehaviour
         _movement = ctx.ReadValue<float>();
     }
 
+    public bool Grounded
+    {
+        get
+        {
+            RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, -transform.up, floorCheckDistance);
+            foreach (var hit in hits)
+            {
+                if (hit.collider.CompareTag("Ground"))
+                    return true;
+            }
+            return false;
+        }
+    }
+
     public void Start()
     {
         _scale = transform.localScale.x;
+        currentHealth = maxHealth;
     }
-
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
-            grounded = true;
         if (collision.gameObject.layer == platformLayer)
             _currentPlatform = collision.collider;
+        if (collision.gameObject.layer == 7)
+        {
+            currentHealth  = currentHealth - 1 <= 0 ? 0 : currentHealth - 1;
+            if (currentHealth == 0)
+            {
+                // END GAME CODE GOES HERE
+                SceneManager.LoadScene("MainMenu");
+            }
+        }
     }
-    public void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-            grounded = false;
-    }
-
-
 
     public void Update()
     {
@@ -122,27 +125,25 @@ public class Player : MonoBehaviour
         }
     }
 
-    public IEnumerator DownPressed()
+    public IEnumerator PassThrough(Collider2D platform)
     {
-        if (_currentPlatform)
-        {
-            Physics2D.IgnoreCollision(col, _currentPlatform, true);
-            yield return new WaitForSeconds(passthroughTime);
-            Physics2D.IgnoreCollision(col, _currentPlatform, false);
-        }
+        Physics2D.IgnoreCollision(col, platform, true);
+        yield return new WaitForSeconds(passthroughTime);
+        Physics2D.IgnoreCollision(col, platform, false);
     }
 
     public void ShootPressed()
     {
-        foreach (Spell spell in spells)
+        if (Time.time > _timeOfNextAttack)
         {
-            spell.UpdateFrame((_upPressed ? 0 : _downPressed ? 2 : 1) + (transform.localScale.x > 0 ? 0 : 3));
+            _timeOfNextAttack = Time.time + attackTime;
+            sword.SetActive(true);
         }
     }
 
     public void JumpPressed()
     {
-        if (grounded)
+        if (Grounded)
             rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
     }
 }
