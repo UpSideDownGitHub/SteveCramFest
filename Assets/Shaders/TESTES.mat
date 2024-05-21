@@ -45,7 +45,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTexture:
-        m_Texture: {fileID: 2800000, guid: e4ea603c86bf0d34aac4c8ad1e52aa98, type: 3}
+        m_Texture: {fileID: 2800000, guid: cb4b798fbab0d844d886b29865224291, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskTex:
@@ -73,10 +73,10 @@ Material:
     - _EnableExternalAlpha: 0
     - _RippleSpeed: 1
     - _RippleStrength: 1
-    - _Ripple_Count: 0.2
+    - _Ripple_Count: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Ripple_Center: {r: -97.47, g: -7.25, b: 0, a: 0}
+    - _Ripple_Center: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
