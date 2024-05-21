@@ -17,6 +17,11 @@ public class CameraController : MonoBehaviour
     private Vector3 cameraVelocity;
     private float velocity;
 
+    public void FindPlayers()
+    {
+        players = GameObject.FindGameObjectsWithTag("Player");
+    }
+
     private void FixedUpdate()
     {
         if (players.Length == 2)
@@ -49,7 +54,7 @@ public class CameraController : MonoBehaviour
             if (temp < camMaxSize)
                 transform.position = Vector3.SmoothDamp(transform.position, desiredPosition, ref cameraVelocity, smoothTime);
         }
-        else
+        else if (players.Length == 1)
         {
             Vector3 centerPoint = players[0].transform.position;
 
