@@ -3434,8 +3434,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 3.6093998, y: -1.8814499, z: 0}
-    m_Extent: {x: 26.8207, y: 6.18155, z: 0}
+    m_Center: {x: 3.6152506, y: -1.8853002, z: 0}
+    m_Extent: {x: 26.823849, y: 6.1872, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -3645,8 +3645,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 4.4316006, y: -1.7262993, z: 0}
-    m_Extent: {x: 41.293198, y: 22.3538, z: 0}
+    m_Center: {x: 4.4390507, y: -1.7240496, z: 0}
+    m_Extent: {x: 41.290848, y: 22.35365, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -4009,7 +4009,7 @@ MonoBehaviour:
   m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
   m_HideEditorLogs: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 39bd4f0c483192649b9bf7fdb0c28a52, type: 2}
 --- !u!114 &2129068094719597821
 MonoBehaviour:
   m_ObjectHideFlags: 0
