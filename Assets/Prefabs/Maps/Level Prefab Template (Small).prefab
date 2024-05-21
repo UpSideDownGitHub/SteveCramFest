@@ -866,6 +866,8 @@ GameObject:
   - component: {fileID: 6235693382867343756}
   - component: {fileID: 3883612516869404340}
   - component: {fileID: 8244574413282395286}
+  - component: {fileID: 5863534656677675845}
+  - component: {fileID: 6987098741348499862}
   m_Layer: 0
   m_Name: WallsTileMap
   m_TagString: Untagged
@@ -2383,6 +2385,36 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &5863534656677675845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4171514167709793514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
+--- !u!114 &6987098741348499862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4171514167709793514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 709c8d6349be44c68dff3d220992400c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AffectedAgents: ffffffff
+  m_TileModifiers: []
 --- !u!1 &4891008991576776733
 GameObject:
   m_ObjectHideFlags: 0
@@ -5722,6 +5754,7 @@ GameObject:
   - component: {fileID: 8317488310194791179}
   - component: {fileID: 3160833697923487542}
   - component: {fileID: 6364553585351291557}
+  - component: {fileID: 4723448913182487037}
   m_Layer: 0
   m_Name: GroundTileMap
   m_TagString: Ground
@@ -6429,6 +6462,22 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &4723448913182487037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7624618698547951114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &8027800375406782010
 GameObject:
   m_ObjectHideFlags: 0
@@ -6760,8 +6809,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_OverrideArea: 0
-  m_Area: 0
+  m_OverrideArea: 1
+  m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
 --- !u!114 &3990069513953302097
