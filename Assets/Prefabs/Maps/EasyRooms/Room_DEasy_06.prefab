@@ -4404,6 +4404,7 @@ GameObject:
   - component: {fileID: 6900741028216841359}
   - component: {fileID: 7786365298150357858}
   - component: {fileID: 2566178124633293203}
+  - component: {fileID: 1458546154464681288}
   m_Layer: 0
   m_Name: WallsTileMap
   m_TagString: Untagged
@@ -5881,6 +5882,22 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &1458546154464681288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5025468634777226899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &5079167451852937237
 GameObject:
   m_ObjectHideFlags: 0
@@ -5977,9 +5994,10 @@ GameObject:
   - component: {fileID: 5232408725131246028}
   - component: {fileID: 8501663063207118710}
   - component: {fileID: 6893141898066860310}
+  - component: {fileID: 3709449152816796168}
   m_Layer: 0
   m_Name: HazzardsTileMap
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6214,6 +6232,22 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &3709449152816796168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5243973248249036159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &5276621578801853247
 GameObject:
   m_ObjectHideFlags: 0
@@ -6434,6 +6468,7 @@ GameObject:
   - component: {fileID: 3413651629131100909}
   - component: {fileID: 295792685877958394}
   - component: {fileID: 5271407398062087684}
+  - component: {fileID: 1597263271913117665}
   m_Layer: 0
   m_Name: GroundTileMap
   m_TagString: Ground
@@ -7231,6 +7266,22 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &1597263271913117665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7117387533019315482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &7141031722603079135
 GameObject:
   m_ObjectHideFlags: 0
