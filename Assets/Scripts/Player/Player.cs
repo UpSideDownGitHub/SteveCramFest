@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
 {
     public Rigidbody2D rb;
     public Collider2D col;
+    public UI ui;
 
     [Header("Jumping")]
     public float floorCheckDistance = 0.1f;
@@ -35,14 +36,19 @@ public class Player : MonoBehaviour
     public float _timeofclose;
 
     [Header("Health")]
-    public float maxHealth;
-    public float currentHealth;
+    public int maxHealth;
+    public int currentHealth;
+
+    [Header("Points")]
+    public int points;
 
     private float _movement;
     private Collider2D _currentPlatform;
     private float _scale;
     [SerializeField] private bool _downPressed;
     [SerializeField] private bool _shootPressed;
+
+    public bool freeze;
 
 
     public void ShootPressed(InputAction.CallbackContext ctx)
@@ -101,6 +107,12 @@ public class Player : MonoBehaviour
     {
         _scale = transform.localScale.x;
         currentHealth = maxHealth;
+
+        var playerInput = GetComponent<PlayerInput>();
+        ui = GameObject.FindGameObjectWithTag("UI" + playerInput.user.index.ToString()).GetComponent<UI>();
+        ui.SetScore(points);
+        ui.SetPowerups(parryList.ToArray());
+        ui.SetHearts(currentHealth);
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
@@ -110,6 +122,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.layer == 7)
         {
             currentHealth  = currentHealth - 1 <= 0 ? 0 : currentHealth - 1;
+            ui.SetHearts(currentHealth);
             if (currentHealth == 0)
             {
                 // END GAME CODE GOES HERE
@@ -126,20 +139,32 @@ public class Player : MonoBehaviour
             if (parryList.Count < 3)
             {
                 parryList.Enqueue(collision.GetComponent<Pickup>().type);
+                ui.SetPowerups(parryList.ToArray());
                 Destroy(collision.gameObject);
             }
         }
     }
 
+    public void AddPoints(int points)
+    {
+        this.points += points;
+        ui.SetScore(this.points);
+    }
+
     public void Update()
     {
+        if (freeze)
+            return;
+
         if (_shootPressed)
             ShootPressed();
     }
 
     public void FixedUpdate()
     {
-        if (movementSpeed != 0)
+        if (freeze)
+            return;
+        if (_movement != 0)
         {
             if (_movement < 0)
                 transform.localScale = new Vector3(-_scale, transform.localScale.y, transform.localScale.z);
@@ -174,6 +199,8 @@ public class Player : MonoBehaviour
 
     public void JumpPressed()
     {
+        if (freeze)
+            return;
         if (Grounded)
             rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
     }

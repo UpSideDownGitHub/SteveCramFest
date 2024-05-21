@@ -31,13 +31,18 @@ public class Manager : MonoBehaviour
 
         currentLevel = Instantiate(levels.levels[Random.Range(0, levels.levels.Length)]);
 
-        var spawnPosition = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>().spawnDoor.transform.position;
+        var spawnPosition = currentLevel.GetComponent<LevelManager>().spawnDoor.transform.position;
         foreach (var player in players)
         {
+            player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            player.GetComponent<Player>().freeze = true;
             player.transform.position = spawnPosition;
         }
         yield return new WaitForSeconds(1f);
-
+        foreach (var player in players)
+        {
+            player.GetComponent<Player>().freeze = false;
+        }
         Fade.SetActive(false);
         changingLevel = false;
     }

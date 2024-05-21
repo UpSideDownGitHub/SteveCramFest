@@ -3317,8 +3317,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 5.3695498, y: -0.5885999, z: 0}
-    m_Extent: {x: 22.21415, y: 6.0206003, z: 0}
+    m_Center: {x: 5.37055, y: -0.6041498, z: 0}
+    m_Extent: {x: 22.20385, y: 6.01965, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -3803,7 +3803,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 1
-      m_TileSpriteIndex: 1
+      m_TileSpriteIndex: 6
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -3813,7 +3813,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 3
-      m_TileSpriteIndex: 3
+      m_TileSpriteIndex: 5
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -4030,18 +4030,18 @@ Tilemap:
   m_TileSpriteArray:
   - m_RefCount: 18
     m_Data: {fileID: 824412733, guid: a202aa9973321a64aa027dda72663461, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -1492730331, guid: a202aa9973321a64aa027dda72663461, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 17
     m_Data: {fileID: -550427266, guid: a202aa9973321a64aa027dda72663461, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 986000914, guid: a202aa9973321a64aa027dda72663461, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: -1492730331, guid: a202aa9973321a64aa027dda72663461, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 1870293864, guid: a202aa9973321a64aa027dda72663461, type: 3}
   m_TileMatrixArray:
@@ -4253,7 +4253,7 @@ MonoBehaviour:
   m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
   m_HideEditorLogs: 0
-  m_NavMeshData: {fileID: 23800000, guid: d9a94346080e31449ad2bef80afbe04f, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 64011f84b0fc2c1498198eb483829cb3, type: 2}
 --- !u!114 &3225132970607993113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4357,12 +4357,12 @@ Transform:
   - {fileID: 4678720418326018896}
   - {fileID: 5411248291365721848}
   - {fileID: 2473287470553843640}
-  - {fileID: 1860887811063285100}
+  - {fileID: 4972728228664165763}
   - {fileID: 6702291805609632434}
   - {fileID: 6973802081643823327}
   - {fileID: 1649145056996608965}
   - {fileID: 3313040649201774594}
-  - {fileID: 6573826648038618183}
+  - {fileID: 6726220298023247622}
   - {fileID: 7935041401787819904}
   - {fileID: 8367216797022548838}
   - {fileID: 1258946952230416564}
@@ -4450,8 +4450,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 5.3772497, y: -0.59605, z: 0}
-    m_Extent: {x: 22.208351, y: 6.0310497, z: 0}
+    m_Center: {x: 5.3644, y: -0.60395, z: 0}
+    m_Extent: {x: 22.210098, y: 6.02035, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -8294,7 +8294,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c71a34874bd12f447a97420f49b239f4, type: 3}
---- !u!4 &1860887811063285100 stripped
+--- !u!4 &4972728228664165763 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6688301060590518504, guid: c71a34874bd12f447a97420f49b239f4, type: 3}
   m_PrefabInstance: {fileID: 1860887811063285099}
@@ -8356,7 +8356,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59f0b1de1ffbbae43a0a4e760df37f54, type: 3}
---- !u!4 &6573826648038618183 stripped
+--- !u!4 &6726220298023247622 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7434491813719307376, guid: 59f0b1de1ffbbae43a0a4e760df37f54, type: 3}
   m_PrefabInstance: {fileID: 4212215110501624694}
