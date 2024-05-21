@@ -31,6 +31,8 @@ public class Player : MonoBehaviour
     public Queue<BulletType> parryList = new();
     private float _timeOfNextAttack;
 
+    public float closeTime;
+    public float _timeofclose;
 
     [Header("Health")]
     public float maxHealth;
@@ -46,9 +48,19 @@ public class Player : MonoBehaviour
     public void ShootPressed(InputAction.CallbackContext ctx)
     {
         if (ctx.action.WasPressedThisFrame())
+        {
             _shootPressed = true;
+            _timeofclose = Time.time + closeTime;
+        }
         else if (ctx.action.WasReleasedThisFrame())
+        {
             _shootPressed = false;
+            if (Time.time > _timeofclose)
+            {
+                Application.Quit();
+                Debug.Log("QUITTING...");
+            }
+        }
     }
 
     public void JumpPressed(InputAction.CallbackContext ctx)

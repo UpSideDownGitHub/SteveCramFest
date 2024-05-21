@@ -22,6 +22,16 @@ public class Enemy : MonoBehaviour
     public Vector2 noticeRange;
     private float _startTime;
 
+    [Header("Patrolling Enemy")]
+    public Rigidbody2D rb;
+    public bool movingRight;
+    public float moveSpeed;
+    public GameObject directionCheck;
+    public float changeCheckDistance;
+    public float playerCheckingDistance;
+    public float playerSeenMultiplyer;
+
+
     [Header("Shooting")]
     public bool shoots;
     public GameObject bullet;
@@ -40,40 +50,95 @@ public class Enemy : MonoBehaviour
         curHealth = maxHealth;
         player = GameObject.FindGameObjectWithTag("Player");
         _startTime = Time.time + Random.Range(noticeRange.x, noticeRange.y);
-        agent.updateUpAxis = false;
-        agent.updateRotation = false;
+
+        if (flying)
+        {
+            agent.updateUpAxis = false;
+            agent.updateRotation = false;
+        }
     }
 
     public void Update()
     {
-        if (Time.time > _startTime && player)
+        if (flying)
         {
-            agent.SetDestination(player.transform.position);
-        }
-
-        if (Time.time > _timeOfNextFire && shoots)
-        {
-            var dir = player.transform.position - firePoint.transform.position;
-            dir.Normalize();
-            RaycastHit2D[] hits = Physics2D.RaycastAll(firePoint.transform.position, dir);
-            foreach (var hit in hits)
+            if (Time.time > _startTime && player)
             {
-                if (hit.collider.CompareTag("Ground") && hit.transform.gameObject.layer != 6)
-                    break;
-                if (hit.collider.CompareTag("Player"))
+                agent.SetDestination(player.transform.position);
+            }
+
+            if (Time.time > _timeOfNextFire && shoots)
+            {
+                var dir = player.transform.position - firePoint.transform.position;
+                dir.Normalize();
+                RaycastHit2D[] hits = Physics2D.RaycastAll(firePoint.transform.position, dir);
+                foreach (var hit in hits)
                 {
-                    _timeOfNextFire = Time.time + fireRate;
-                    var bulletTemp = Instantiate(bullet, firePoint.transform.position, Quaternion.identity);
-                    bulletTemp.GetComponent<Rigidbody2D>().AddForce(dir * fireForce);
-                    bulletTemp.GetComponent<Projectile>().shooter = gameObject;
+                    if (hit.collider.CompareTag("Ground") && hit.transform.gameObject.layer != 6)
+                        break;
+                    if (hit.collider.CompareTag("Player"))
+                    {
+                        _timeOfNextFire = Time.time + fireRate;
+                        var bulletTemp = Instantiate(bullet, firePoint.transform.position, Quaternion.identity);
+                        bulletTemp.GetComponent<Rigidbody2D>().AddForce(dir * fireForce);
+                        bulletTemp.GetComponent<Projectile>().shooter = gameObject;
+                    }
                 }
             }
+
+            if (agent.velocity.x < 0)
+                transform.localScale = new Vector3(-_scale, transform.localScale.y, transform.localScale.z);
+            else if (agent.velocity.x > 0)
+                transform.localScale = new Vector3(_scale, transform.localScale.y, transform.localScale.z);
+        }
+        else
+        {
+            RaycastHit2D hitPlayer;
+            if (movingRight)
+                hitPlayer = Physics2D.Raycast(directionCheck.transform.position, directionCheck.transform.right, playerCheckingDistance);
+            else
+                hitPlayer = Physics2D.Raycast(directionCheck.transform.position, -directionCheck.transform.right, playerCheckingDistance);
+
+            if (hitPlayer.collider.CompareTag("Player"))
+            {
+                if (movingRight)
+                    rb.velocity = new Vector2(moveSpeed * playerSeenMultiplyer, rb.velocity.y);
+                else
+                    rb.velocity = new Vector2(-moveSpeed * playerSeenMultiplyer, rb.velocity.y);
+            }
+            else
+            {
+                if (IsAtEdge(movingRight))
+                    movingRight = !movingRight;
+                if (movingRight)
+                    rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
+                else
+                    rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
+            }
+
+
+            if (rb.velocity.x < 0)
+                transform.localScale = new Vector3(-_scale, transform.localScale.y, transform.localScale.z);
+            else if (rb.velocity.x > 0)
+                transform.localScale = new Vector3(_scale, transform.localScale.y, transform.localScale.z);
         }
 
-        if (agent.velocity.x < 0)
-            transform.localScale = new Vector3(-_scale, transform.localScale.y, transform.localScale.z);
-        else if (agent.velocity.x > 0)
-            transform.localScale = new Vector3(_scale, transform.localScale.y, transform.localScale.z);
+
+    }
+
+    bool IsAtEdge(bool movingtotheright)
+    {
+        RaycastHit2D hitDown = Physics2D.Raycast(directionCheck.transform.position, -directionCheck.transform.up, changeCheckDistance);
+
+        RaycastHit2D hitRight;
+        if (movingtotheright) 
+            hitRight = Physics2D.Raycast(directionCheck.transform.position, directionCheck.transform.right, changeCheckDistance);
+        else
+            hitRight = Physics2D.Raycast(directionCheck.transform.position, -directionCheck.transform.right, changeCheckDistance);
+
+        if (!hitDown.collider || hitRight.collider)
+            return true;
+        return false;
     }
 
     public void TakeDamage(float damage)
