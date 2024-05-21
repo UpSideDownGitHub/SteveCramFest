@@ -408,6 +408,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: tilesheet_13
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f40bc88aa9442f48a25d001fca46bd8
+      internalID: 1870293864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesheet_14
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efd9ce38c2a8ed943a37f6d4c9763b88
+      internalID: -1345592975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -424,6 +466,8 @@ TextureImporter:
       tilesheet_10: -1009915799
       tilesheet_11: 266179755
       tilesheet_12: 1846031538
+      tilesheet_13: 1870293864
+      tilesheet_14: -1345592975
       tilesheet_2: 2103100911
       tilesheet_3: 961959976
       tilesheet_4: -269019172
