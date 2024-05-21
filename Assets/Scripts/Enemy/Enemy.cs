@@ -51,16 +51,23 @@ public class Enemy : MonoBehaviour
             agent.SetDestination(player.transform.position);
         }
 
-        var dir = player.transform.position - firePoint.transform.position;
-        RaycastHit2D hit = Physics2D.Raycast(firePoint.transform.position, dir);
-        Debug.DrawRay(firePoint.transform.position, dir, Color.red, 2f);
-        print(hit.collider.tag);
-        if (Time.time > _timeOfNextFire && hit.collider.CompareTag("Player"))
+        if (Time.time > _timeOfNextFire && shoots)
         {
-            print("Shooting");
-            _timeOfNextFire = Time.time + fireRate;
-            var bulletTemp = Instantiate(bullet, firePoint.transform.position, Quaternion.Euler(dir));
-            bulletTemp.GetComponent<Rigidbody2D>().AddForce(transform.right * fireForce);
+            var dir = player.transform.position - firePoint.transform.position;
+            dir.Normalize();
+            RaycastHit2D[] hits = Physics2D.RaycastAll(firePoint.transform.position, dir);
+            foreach (var hit in hits)
+            {
+                if (hit.collider.CompareTag("Ground") && hit.transform.gameObject.layer != 6)
+                    break;
+                if (hit.collider.CompareTag("Player"))
+                {
+                    _timeOfNextFire = Time.time + fireRate;
+                    var bulletTemp = Instantiate(bullet, firePoint.transform.position, Quaternion.identity);
+                    bulletTemp.GetComponent<Rigidbody2D>().AddForce(dir * fireForce);
+                    bulletTemp.GetComponent<Projectile>().shooter = gameObject;
+                }
+            }
         }
 
         if (agent.velocity.x < 0)

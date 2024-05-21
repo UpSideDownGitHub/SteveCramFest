@@ -4852,9 +4852,9 @@ GameObject:
   - component: {fileID: 2531183139055081733}
   - component: {fileID: 3510078038034162036}
   - component: {fileID: -5485497848533227310}
-  - component: {fileID: 974041085919605316}
+  - component: {fileID: 3009735969603519446}
   m_Layer: 7
-  m_Name: EnemyProj_S
+  m_Name: BounceShot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4870,7 +4870,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.788, y: 1.554, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3254041433314814905}
@@ -4919,7 +4919,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 337d5d0a7964648449ea718bbcffcc1e, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.020439148, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5024,9 +5024,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9920642955d4c3541879c48f72f5b5bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerOwned: 0
+  playerOwned: 1
   damage: 1
-  type: 0
+  type: 6
   shooter: {fileID: 0}
   target: {fileID: 0}
   agent: {fileID: 0}
@@ -5034,7 +5034,7 @@ MonoBehaviour:
   curHits: 0
   rb: {fileID: 0}
   movementSpeed: 0
---- !u!114 &974041085919605316
+--- !u!114 &3009735969603519446
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -271,7 +271,7 @@ MonoBehaviour:
   shoots: 1
   bullet: {fileID: 1868487987691235785, guid: ceeae42e68a84c54593367112dbeeaf4, type: 3}
   firePoint: {fileID: 4013443948759870660}
-  fireRate: 0.5
+  fireRate: 2
   fireForce: 300
 --- !u!195 &5828555433620388341
 NavMeshAgent:

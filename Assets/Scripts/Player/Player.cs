@@ -25,10 +25,12 @@ public class Player : MonoBehaviour
     public int platformLayer;
     public float passthroughTime;
 
-    [Header("Spells (Attacking)")]
+    [Header("Attacking")]
     public GameObject sword;
     public float attackTime;
+    public Queue<BulletType> parryList = new();
     private float _timeOfNextAttack;
+
 
     [Header("Health")]
     public float maxHealth;
@@ -101,6 +103,19 @@ public class Player : MonoBehaviour
                 // END GAME CODE GOES HERE
                 SceneManager.LoadScene("MainMenu");
             }
+            Destroy(collision.gameObject);
+        }
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Pickup"))
+        {
+            if (parryList.Count < 3)
+            {
+                parryList.Enqueue(collision.GetComponent<Pickup>().type);
+                Destroy(collision.gameObject);
+            }
         }
     }
 
@@ -122,6 +137,10 @@ public class Player : MonoBehaviour
 
             rb.AddForce(transform.right * movementSpeed * _movement * Time.deltaTime, ForceMode2D.Impulse);
             rb.velocity = new Vector2(Mathf.Abs(rb.velocity.x) > maxSpeed ? rb.velocity.x > 0 ? maxSpeed : -maxSpeed : rb.velocity.x, rb.velocity.y);
+        }
+        else
+        {
+            rb.velocity = new Vector3(0, rb.velocity.y, 0);
         }
     }
 
