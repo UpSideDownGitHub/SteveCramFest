@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 26603909950750841}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 46.7, y: -71.02, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -40217,7 +40217,7 @@ MonoBehaviour:
   m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
   m_HideEditorLogs: 0
-  m_NavMeshData: {fileID: 23800000, guid: f15d23d143b5e244a882c7050824524f, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 27b8fd21d84ba764d9e6e82e13fea875, type: 2}
 --- !u!114 &5594880456948477807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51991,8 +51991,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 4.429899, y: -1.7278004, z: 0}
-    m_Extent: {x: 41.2928, y: 22.3578, z: 0}
+    m_Center: {x: 4.4336014, y: -1.7214003, z: 0}
+    m_Extent: {x: 41.2999, y: 22.3581, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -52073,8 +52073,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 3.6198502, y: -2.5334, z: 0}
-    m_Extent: {x: 32.36465, y: 11.068899, z: 0}
+    m_Center: {x: 3.606, y: -2.5319, z: 0}
+    m_Extent: {x: 32.3675, y: 11.0683, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
