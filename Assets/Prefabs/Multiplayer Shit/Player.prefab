@@ -398,7 +398,7 @@ GameObject:
   - component: {fileID: 8030223019111807268}
   - component: {fileID: 861447791611546034}
   - component: {fileID: 3211435004188870392}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Sword Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -488,6 +488,7 @@ MonoBehaviour:
   baseAttackDamage: 1
   bulletLayer: 7
   parryForce: 2000
+  splitCount: 100
   reboundTypes:
   - {fileID: 1868487987691235785, guid: 04cb10f620575644c876d06444d6527b, type: 3}
   - {fileID: 3379199297584793154, guid: 6397c6ef9e71d3c41bf528d45e9058cf, type: 3}

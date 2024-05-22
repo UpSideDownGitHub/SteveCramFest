@@ -1,15 +1,16 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
 public enum BulletType
 {
-    NORMALSHOT,
-    FIREBALL,
+    NORMALSHOT, // normal shot
+    FIREBALL, // large explosion
     SEEKER,
-    LIGHTNING,
-    ICESPIKE,
-    SPLITSHOT,
-    BOUNCESHOT,
+    LIGHTNING, // larger lightning
+    ICESPIKE, // ice explosion // freeze enemy
+    SPLITSHOT, // many many bullets
+    BOUNCESHOT, 
     DEATHBRINGER
 }
 
@@ -32,6 +33,7 @@ public class Projectile : MonoBehaviour
     public int curHits;
     public Rigidbody2D rb;
     public float movementSpeed;
+    public List<string> visited;
 
     public void Start()
     {
@@ -41,8 +43,8 @@ public class Projectile : MonoBehaviour
             {
                 case BulletType.SEEKER:
                     // find enemy targt and move towards it
-                            agent.updateUpAxis = false;
-        agent.updateRotation = false;
+                    agent.updateUpAxis = false;
+                    agent.updateRotation = false;
                     target = FindClosestEnemy();
                     break;
                 case BulletType.LIGHTNING:
@@ -65,12 +67,13 @@ public class Projectile : MonoBehaviour
             if (enemy == notThis)
                 continue;
             var dist = Vector3.Distance(transform.position, enemy.transform.position);
-            if (dist < closest)
+            if (dist < closest && !visited.Contains(enemy.name))
             {
                 closest = dist;
                 closestEnemy = enemy;
             }
         }
+        visited.Add(closestEnemy.name);
         return closestEnemy;
     }
     public GameObject FindClosestEnemy()
@@ -81,12 +84,13 @@ public class Projectile : MonoBehaviour
         foreach (var enemy in enemies)
         {
             var dist = Vector3.Distance(transform.position, enemy.transform.position);
-            if (dist < closest)
+            if (dist < closest && !visited.Contains(enemy.name))
             {
                 closest = dist;
                 closestEnemy = enemy;
             }
         }
+        visited.Add(closestEnemy.name);
         return closestEnemy;
     }
 
@@ -107,9 +111,6 @@ public class Projectile : MonoBehaviour
                 if (Vector3.Distance(transform.position, target.transform.position) < 1f)
                 {
                     target.GetComponent<Enemy>().TakeDamage(damage);
-                    curHits++;
-                    if (curHits == maxHits)
-                        Destroy(gameObject);
                     target = FindClosestEnemy(target);
                     if (target == null)
                         Destroy(gameObject);

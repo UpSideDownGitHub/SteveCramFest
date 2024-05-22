@@ -157,7 +157,7 @@ GameObject:
   - component: {fileID: 7147431098925434753}
   - component: {fileID: 2318698469443834188}
   - component: {fileID: 1629498003071038273}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Hit Collision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -341,8 +341,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelManager: {fileID: 0}
-  maxHealth: 4
-  curHealth: 4
+  maxHealth: 5
+  curHealth: 5
   canTakeDamage: 1
   dissolveTime: 1
   enemySprite: {fileID: 7544082039737918771}
@@ -453,6 +453,10 @@ PrefabInstance:
     - target: {fileID: 545421520600761425, guid: 1171a077d679be7438469a8d80db43bf, type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 594524879884163899, guid: 1171a077d679be7438469a8d80db43bf, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 594524879884163899, guid: 1171a077d679be7438469a8d80db43bf, type: 3}
       propertyPath: m_Materials.Array.data[0]
