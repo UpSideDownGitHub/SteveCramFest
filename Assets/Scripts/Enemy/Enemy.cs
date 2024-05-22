@@ -17,6 +17,10 @@ public class Enemy : MonoBehaviour
     public bool flying;
     public GameObject player;
 
+    [Header("Animations")]
+    public Animator enemyAnimator;
+    private float previousSpeed;
+
     [Header("Flying Enemy")]
     public NavMeshAgent agent;
     public Vector2 noticeRange;
@@ -128,6 +132,8 @@ public class Enemy : MonoBehaviour
 
             if (hitPlayer.collider.CompareTag("Player"))
             {
+                AttackAnimation();
+
                 if (movingRight)
                     rb.velocity = new Vector2(moveSpeed * playerSeenMultiplyer, rb.velocity.y);
                 else
@@ -151,6 +157,14 @@ public class Enemy : MonoBehaviour
         }
 
 
+    }
+
+    private void AttackAnimation()
+    {
+        previousSpeed = moveSpeed;
+        moveSpeed = 0;
+
+        enemyAnimator.SetTrigger("Attack");
     }
 
     bool IsAtEdge(bool movingtotheright)
