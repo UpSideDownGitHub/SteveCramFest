@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dbc8c4322dc4ee143ba8f1cd74c24654
+guid: 4a724ca797953ce469f16b16b51247af
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -136,7 +136,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PlayerSwordSubGlowSpriteSheet_0
+      name: PlayerJumpSpriteSheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -150,14 +150,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4716a3a1f8626544f915c032d1096ccd
-      internalID: -2125629523
+      spriteID: 7ada7085f0834b34dae7d494c41634af
+      internalID: -1866859527
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSwordSubGlowSpriteSheet_1
+      name: PlayerJumpSpriteSheet_1
       rect:
         serializedVersion: 2
         x: 64
@@ -171,14 +171,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9c5b84757af9c04cab63f6e875476f9
-      internalID: -657193208
+      spriteID: 624153d24e040df4693a79a06a870041
+      internalID: -1022392926
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSwordSubGlowSpriteSheet_2
+      name: PlayerJumpSpriteSheet_2
       rect:
         serializedVersion: 2
         x: 128
@@ -192,14 +192,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b3d950c0e9818444bb5fc7c10ab1c0f
-      internalID: 801523568
+      spriteID: eb5a29a792522364f97db3238007f59b
+      internalID: -508576092
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSwordSubGlowSpriteSheet_3
+      name: PlayerJumpSpriteSheet_3
       rect:
         serializedVersion: 2
         x: 192
@@ -213,8 +213,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee944f2f1fb6c474fa01e46a534cf0e5
-      internalID: 1323891889
+      spriteID: b4f7d704c75d9b44794b1f86805194e7
+      internalID: -174105976
       vertices: []
       indices: 
       edges: []
@@ -230,10 +230,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      PlayerSwordSubGlowSpriteSheet_0: -2125629523
-      PlayerSwordSubGlowSpriteSheet_1: -657193208
-      PlayerSwordSubGlowSpriteSheet_2: 801523568
-      PlayerSwordSubGlowSpriteSheet_3: 1323891889
+      PlayerJumpSpriteSheet_0: -1866859527
+      PlayerJumpSpriteSheet_1: -1022392926
+      PlayerJumpSpriteSheet_2: -508576092
+      PlayerJumpSpriteSheet_3: -174105976
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
