@@ -3,14 +3,12 @@ using UnityEngine;
 
 public class EnemyTriggerDamage : MonoBehaviour
 {
-    [HideInInspector] public bool attacked;
-
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && !attacked)
+        if (collision.CompareTag("Player"))
         {
-            attacked = true;
             collision.GetComponent<Player>().TakeDamage();
+            gameObject.SetActive(false);
         }
     }
 }

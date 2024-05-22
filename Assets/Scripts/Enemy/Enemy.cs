@@ -191,15 +191,16 @@ public class Enemy : MonoBehaviour
         enemyAnimator.SetTrigger("Attack");
         if (moveSpeed == 0)
             return;
-        StartCoroutine(StartRun());
         moveSpeed = 0;
+        StartCoroutine(StartRun());
     }
 
     public IEnumerator StartRun()
     {
+        weaponTrigger.gameObject.SetActive(true);
         yield return new WaitForSeconds(afterAttackDelay);
         moveSpeed = previousSpeed;
-        weaponTrigger.GetComponent<EnemyTriggerDamage>().attacked = false;
+        weaponTrigger.gameObject.SetActive(false);
     }
 
     bool IsAtEdge(bool movingtotheright)
