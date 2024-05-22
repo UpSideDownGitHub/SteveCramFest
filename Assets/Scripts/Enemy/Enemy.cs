@@ -129,6 +129,9 @@ public class Enemy : MonoBehaviour
                 hitPlayer = Physics2D.Raycast(directionCheck.transform.position, directionCheck.transform.right, playerCheckingDistance);
             else
                 hitPlayer = Physics2D.Raycast(directionCheck.transform.position, -directionCheck.transform.right, playerCheckingDistance);
+            
+            if (!hitPlayer.collider)
+                return;
 
             if (hitPlayer.collider.CompareTag("Player"))
             {

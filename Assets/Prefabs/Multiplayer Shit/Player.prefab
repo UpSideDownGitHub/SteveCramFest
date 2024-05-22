@@ -232,9 +232,9 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 2
-  m_AngularDrag: 0.5
-  m_GravityScale: 4
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 11
   m_Material: {fileID: 6200000, guid: 8302a865d6d6e034ea32a650d740965e, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -244,7 +244,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &6292859367238521746
 MonoBehaviour:
@@ -260,20 +260,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 2033041444076598292}
   col: {fileID: 9052963590474430924}
+  ui: {fileID: 0}
   floorCheckDistance: 0.55
-  jumpForce: 13
-  movementSpeed: 75
-  maxSpeed: 20
+  jumpForce: 30
+  jumpCount: 2
+  movementSpeed: 10000
+  maxSpeed: 9
   platformLayer: 6
   passthroughTime: 0.5
   sword: {fileID: 6714760833760140316}
   attackTime: 0.5
-  closeTime: 2
-  _timeofclose: 0
-  maxHealth: 100
-  currentHealth: 0
+  maxHealth: 5
+  currentHealth: 5
+  iframeTime: 0.2
+  invinsable: 0
+  points: 0
+  mainScene: MainMenu
   _downPressed: 0
   _shootPressed: 0
+  freeze: 0
 --- !u!114 &2044018240918713292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -379,6 +384,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: ff4d8c8b-cc11-4e0d-852b-98ad15bb9768
     m_ActionName: Gameplay/Up[/XInputControllerWindows/dpad/up]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9e16b4d4-e0be-47e8-a96e-321604c89741
+    m_ActionName: Gameplay/StartButton[/XInputControllerWindows/select,/XInputControllerWindows/start]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: XBOBX
   m_DefaultActionMap: Gameplay
@@ -495,6 +504,7 @@ MonoBehaviour:
   - {fileID: 1868487987691235785, guid: 1c754848bb837764aa6f5a0ab4b8bb4f, type: 3}
   - {fileID: 1868487987691235785, guid: 50d25af5695cfcc49bb78681e7278130, type: 3}
   - {fileID: 1868487987691235785, guid: 8e8ab7da1a503bf4d8ce18095f831f3d, type: 3}
+  playerHUD: {fileID: 0}
   player: {fileID: 6292859367238521746}
 --- !u!60 &3211435004188870392
 PolygonCollider2D:

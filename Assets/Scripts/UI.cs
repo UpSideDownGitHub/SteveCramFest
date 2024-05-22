@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,13 +22,14 @@ public class UI : MonoBehaviour
 
     public void SetHearts(int health)
     {
-        for (int i = 0; i < Hearts.Length; i++)
-        {
-            if (health > i)
-                Hearts[i].SetTrigger("Gain Health");
-            else
-                Hearts[i].SetTrigger("Lose Health");
-        }
+        Hearts[health].SetTrigger("Lose Health");
+        //for (int i = 0; i < Hearts.Length; i++)
+        //{
+        //    if (health > i)
+        //        Hearts[i].SetTrigger("Gain Health");
+        //    else
+        //        Hearts[i].SetTrigger("Lose Health");
+        //}
     }
 
     public void SetPowerups(BulletType[] types)
@@ -51,16 +53,24 @@ public class UI : MonoBehaviour
         }
     }
 
-    public void SetActiveGem()
+    public IEnumerator RunAfter(BulletType[] types)
+    {
+        yield return new WaitForSeconds(0.25f);
+        SetPowerups(types);
+    }
+
+    public void SetActiveGem(BulletType[] types)
     {
         gemHolder.SetTrigger("Spin");
+        powerups[0].gameObject.SetActive(false);
+        StartCoroutine(RunAfter(types));
 
-        powerups[currentPowerup].gameObject.SetActive(false);
-        currentPowerup++;
+        //powerups[currentPowerup].gameObject.SetActive(false);
+        //currentPowerup++;
 
-        if (currentPowerup > 2)
-            currentPowerup = 0;
+        //if (currentPowerup > 2)
+        //    currentPowerup = 0;
 
-        powerupsGlow[currentPowerup].gameObject.SetActive(true);
+        //powerupsGlow[currentPowerup].gameObject.SetActive(true);
     }
 }

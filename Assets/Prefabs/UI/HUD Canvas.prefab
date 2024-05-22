@@ -131,6 +131,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player HUD
       objectReference: {fileID: 0}
+    - target: {fileID: 224052179447776336, guid: aee6f41e24c474b49acdf8b7ab6d5a26, type: 3}
+      propertyPath: m_TagString
+      value: UI0
+      objectReference: {fileID: 0}
     - target: {fileID: 1028327410399279517, guid: aee6f41e24c474b49acdf8b7ab6d5a26, type: 3}
       propertyPath: m_Color.b
       value: 0.47058824
@@ -408,13 +412,13 @@ MonoBehaviour:
   - {fileID: 2683405350573719591}
   - {fileID: 61550185176402755}
   powerupColors:
-  - {r: 0.5351658, g: 1, b: 0, a: 0}
-  - {r: 1, g: 0.62352943, b: 0, a: 0}
-  - {r: 0.6392157, g: 0, b: 0.6862745, a: 0}
-  - {r: 1, g: 1, b: 0, a: 0}
-  - {r: 0, g: 0.70980394, b: 0.85882354, a: 0}
-  - {r: 0, g: 1, b: 0.5686275, a: 0}
-  - {r: 1, g: 0.6745283, b: 0.97686636, a: 0}
+  - {r: 0.5351658, g: 1, b: 0, a: 1}
+  - {r: 1, g: 0.62352943, b: 0, a: 1}
+  - {r: 0.6392157, g: 0, b: 0.6862745, a: 1}
+  - {r: 1, g: 1, b: 0, a: 1}
+  - {r: 0, g: 0.70980394, b: 0.85882354, a: 1}
+  - {r: 0, g: 1, b: 0.5686275, a: 1}
+  - {r: 1, g: 0.6745283, b: 0.97686636, a: 1}
 --- !u!114 &1527637095248291522 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1239818411736777786, guid: aee6f41e24c474b49acdf8b7ab6d5a26, type: 3}
@@ -531,6 +535,10 @@ PrefabInstance:
     - target: {fileID: 224052179447776336, guid: aee6f41e24c474b49acdf8b7ab6d5a26, type: 3}
       propertyPath: m_Name
       value: Player HUD 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 224052179447776336, guid: aee6f41e24c474b49acdf8b7ab6d5a26, type: 3}
+      propertyPath: m_TagString
+      value: UI1
       objectReference: {fileID: 0}
     - target: {fileID: 1028327410399279517, guid: aee6f41e24c474b49acdf8b7ab6d5a26, type: 3}
       propertyPath: m_Color.r
@@ -833,13 +841,13 @@ MonoBehaviour:
   - {fileID: 7285954220946346058}
   - {fileID: 4682368815636093742}
   powerupColors:
-  - {r: 0.5351658, g: 1, b: 0, a: 0}
-  - {r: 1, g: 0.62352943, b: 0, a: 0}
-  - {r: 0.6392157, g: 0, b: 0.6862745, a: 0}
-  - {r: 1, g: 1, b: 0, a: 0}
-  - {r: 0, g: 0.70980394, b: 0.85882354, a: 0}
-  - {r: 0, g: 1, b: 0.5686275, a: 0}
-  - {r: 1, g: 0.6745283, b: 0.97686636, a: 0}
+  - {r: 0.5351658, g: 1, b: 0, a: 1}
+  - {r: 1, g: 0.62352943, b: 0, a: 1}
+  - {r: 0.6392157, g: 0, b: 0.6862745, a: 1}
+  - {r: 1, g: 1, b: 0, a: 1}
+  - {r: 0, g: 0.70980394, b: 0.85882354, a: 1}
+  - {r: 0, g: 1, b: 0.5686275, a: 1}
+  - {r: 1, g: 0.6745283, b: 0.97686636, a: 1}
 --- !u!114 &6130234619547383471 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1239818411736777786, guid: aee6f41e24c474b49acdf8b7ab6d5a26, type: 3}
