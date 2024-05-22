@@ -301,7 +301,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.96187115, y: 1, z: 1}
   m_Center: {x: 0.6100507, y: 0, z: 0}
@@ -319,7 +319,7 @@ GameObject:
   - component: {fileID: 6866010719802193555}
   - component: {fileID: 3276722863171370233}
   m_Layer: 9
-  m_Name: Enemy_EyeMonster 1
+  m_Name: Enemy_Slime
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -413,6 +413,8 @@ MonoBehaviour:
   maxHealth: 1
   curHealth: 1
   canTakeDamage: 1
+  dissolveTime: 0
+  enemySprite: {fileID: 0}
   flying: 0
   player: {fileID: 0}
   enemyAnimator: {fileID: 5995012439216046252}
@@ -502,6 +504,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.5074501, y: 0.04583931}
-  m_Size: {x: 1.4430923, y: 1.7945061}
+  m_Offset: {x: -0.5074501, y: -0.2120111}
+  m_Size: {x: 1.4430923, y: 2.6048932}
   m_Direction: 0
