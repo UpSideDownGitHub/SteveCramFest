@@ -3089,8 +3089,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 5.3686, y: -0.59485006, z: 0}
-    m_Extent: {x: 22.216202, y: 6.01685, z: 0}
+    m_Center: {x: 5.3622494, y: -0.6055, z: 0}
+    m_Extent: {x: 22.21015, y: 6.0221996, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -4254,8 +4254,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 5.3705997, y: -0.5999, z: 0}
-    m_Extent: {x: 22.2064, y: 6.0213003, z: 0}
+    m_Center: {x: 5.3714504, y: -0.59935, z: 0}
+    m_Extent: {x: 22.21135, y: 6.02605, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -8604,6 +8604,10 @@ PrefabInstance:
     - target: {fileID: 9060999354526097349, guid: c71a34874bd12f447a97420f49b239f4, type: 3}
       propertyPath: m_Name
       value: TorchSconeLight (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060999354526097349, guid: c71a34874bd12f447a97420f49b239f4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
