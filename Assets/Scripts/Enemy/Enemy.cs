@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UIElements;
 using static UnityEngine.RuleTile.TilingRuleOutput;
+using Transform = UnityEngine.Transform;
 
 public class Enemy : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class Enemy : MonoBehaviour
     [Header("Health")]
     public float maxHealth;
     public float curHealth;
+    public bool canTakeDamage;
 
     [Header("Navigation")]
     public bool flying;
@@ -46,13 +48,18 @@ public class Enemy : MonoBehaviour
     private float _timeOfNextFire;
     private float _scale;
 
+    [Header("Melee")]
+    public GameObject weaponTrigger;
+    public float meleeDistance;
+    public bool inRange;
+
     [Header("Multiplayer")]
     public float playerSearchTime;
     private float _timeToSearchForNextPlayer;
 
     public void Start()
     {
-            levelManager = GetComponentInParent<LevelManager>();
+        levelManager = GetComponentInParent<LevelManager>();
         _scale = transform.localScale.x;
         curHealth = maxHealth;
         player = GameObject.FindGameObjectWithTag("Player");
@@ -137,8 +144,6 @@ public class Enemy : MonoBehaviour
 
             if (hitPlayer.collider.CompareTag("Player"))
             {
-                AttackAnimation();
-
                 if (movingRight)
                     rb.velocity = new Vector2(moveSpeed * playerSeenMultiplyer, rb.velocity.y);
                 else
@@ -160,23 +165,42 @@ public class Enemy : MonoBehaviour
             else if (rb.velocity.x > 0)
                 transform.localScale = new Vector3(_scale, transform.localScale.y, transform.localScale.z);
         }
+        if (!shoots)
+        {
+            RaycastHit2D hitRight;
+            if (movingRight)
+                hitRight = Physics2D.Raycast(directionCheck.transform.position, directionCheck.transform.right, meleeDistance);
+            else
+                hitRight = Physics2D.Raycast(directionCheck.transform.position, -directionCheck.transform.right, meleeDistance);
 
-
+            if (hitRight.collider)
+            {
+                if (hitRight.collider.CompareTag("Player"))
+                {
+                    inRange = true;
+                    AttackAnimation();
+                }
+            }
+            else
+                inRange = false;
+        }
     }
 
     private void AttackAnimation()
     {
-
         enemyAnimator.SetTrigger("Attack");
-
-        StartCoroutine(StartRun());
+        if (moveSpeed == 0)
+            return;
         moveSpeed = 0;
+        StartCoroutine(StartRun());
     }
 
     public IEnumerator StartRun()
     {
+        weaponTrigger.gameObject.SetActive(true);
         yield return new WaitForSeconds(afterAttackDelay);
         moveSpeed = previousSpeed;
+        weaponTrigger.gameObject.SetActive(false);
     }
 
     bool IsAtEdge(bool movingtotheright)
@@ -196,6 +220,8 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        if (!canTakeDamage)
+            return;
         curHealth = curHealth - damage < 0 ? 0 : curHealth - damage;
 
         if (curHealth == 0)

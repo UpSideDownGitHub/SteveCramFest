@@ -128,34 +128,36 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.layer == platformLayer)
             _currentPlatform = collision.collider;
-        if (collision.gameObject.layer == 7)
+        if (collision.gameObject.layer == 7 || collision.gameObject.CompareTag("Hazard"))
         {
-            if (invinsable)
-            {
-                Destroy(collision.gameObject);
-                return;
-            }
-
-            currentHealth  = currentHealth - 1 <= 0 ? 0 : currentHealth - 1;
-            ui.SetHearts(currentHealth);
-            invinsable = true;
-            _timeOfNoIFrame = Time.time + iframeTime;
-            if (currentHealth == 0)
-            {
-                // END GAME CODE GOES HERE
-                if (singlePlayer)
-                {
-                    PlayerPrefs.SetInt("ScoreP1", points);
-                    PlayerPrefs.SetInt("Multiplayer", 0);
-                    SceneManager.LoadScene("Results");
-                }
-                else
-                {
-                    GameObject.FindGameObjectWithTag("Manager").GetComponent<Manager>().PlayerDied();
-                    gameObject.SetActive(false);
-                }
-            }
+            TakeDamage();
             Destroy(collision.gameObject);
+        }
+    }
+
+    public void TakeDamage()
+    {
+        if (invinsable)
+            return;
+
+        currentHealth = currentHealth - 1 <= 0 ? 0 : currentHealth - 1;
+        ui.SetHearts(currentHealth);
+        invinsable = true;
+        _timeOfNoIFrame = Time.time + iframeTime;
+        if (currentHealth == 0)
+        {
+            // END GAME CODE GOES HERE
+            if (singlePlayer)
+            {
+                PlayerPrefs.SetInt("ScoreP1", points);
+                PlayerPrefs.SetInt("Multiplayer", 0);
+                SceneManager.LoadScene("Results");
+            }
+            else
+            {
+                GameObject.FindGameObjectWithTag("Manager").GetComponent<Manager>().PlayerDied();
+                gameObject.SetActive(false);
+            }
         }
     }
 
