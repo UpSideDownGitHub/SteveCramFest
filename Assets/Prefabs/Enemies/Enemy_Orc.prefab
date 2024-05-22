@@ -341,8 +341,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelManager: {fileID: 0}
-  maxHealth: 4
-  curHealth: 4
+  maxHealth: 5
+  curHealth: 5
   canTakeDamage: 1
   dissolveTime: 1
   enemySprite: {fileID: 7544082039737918771}
