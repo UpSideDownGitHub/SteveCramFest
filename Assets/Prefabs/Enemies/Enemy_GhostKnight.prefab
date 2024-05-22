@@ -121,7 +121,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b8158adb25a0c14586c4529d468c65a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackTime: 0.2
   attacked: 0
 --- !u!1 &5023364409183028088
 GameObject:
@@ -357,6 +356,7 @@ GameObject:
   - component: {fileID: 5381874566262567711}
   - component: {fileID: 6926704948354230356}
   - component: {fileID: 7316285195396622562}
+  - component: {fileID: 1143673161022501881}
   m_Layer: 0
   m_Name: Enemy_GhostKnight
   m_TagString: Enemy
@@ -451,7 +451,7 @@ MonoBehaviour:
   levelManager: {fileID: 0}
   maxHealth: 2
   curHealth: 2
-  canTakeDamage: 0
+  canTakeDamage: 1
   flying: 0
   player: {fileID: 0}
   enemyAnimator: {fileID: 8344128090051238149}
@@ -473,6 +473,7 @@ MonoBehaviour:
   fireForce: 300
   weaponTrigger: {fileID: 4829980131176227566}
   meleeDistance: 5
+  inRange: 0
   playerSearchTime: 0
 --- !u!50 &6926704948354230356
 Rigidbody2D:
@@ -536,3 +537,24 @@ CapsuleCollider2D:
   m_Offset: {x: 0.41088867, y: -0.18595958}
   m_Size: {x: 0.3892975, y: 1.0202346}
   m_Direction: 0
+--- !u!95 &1143673161022501881
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7148192688491689199}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 88ab38202817ab742a43db7ad6980d76, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
