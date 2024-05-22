@@ -254,6 +254,8 @@ MonoBehaviour:
   maxHealth: 1
   curHealth: 1
   canTakeDamage: 1
+  dissolveTime: 0
+  enemySprite: {fileID: 0}
   flying: 0
   player: {fileID: 0}
   enemyAnimator: {fileID: 2618063065977976024}
@@ -356,13 +358,13 @@ GameObject:
   m_Component:
   - component: {fileID: 6389375642058942326}
   - component: {fileID: 7672906723973174178}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: attackbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6389375642058942326
 Transform:
   m_ObjectHideFlags: 0
