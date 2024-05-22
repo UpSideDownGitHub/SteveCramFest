@@ -12,6 +12,11 @@ public class MainMenu : MonoBehaviour
     public GameObject ModeSelection;
     public GameObject button1;
 
+
+    public void startPressed()
+    {
+        StartCoroutine(StartPressed());
+    }
     public IEnumerator StartPressed()
     {
         Main.GetComponent<Animator>().SetTrigger("Play");
@@ -31,6 +36,15 @@ public class MainMenu : MonoBehaviour
         }
         Main.SetActive(true);
         ModeSelection.SetActive(false);
+    }
+
+    public void StartSinglePlayer()
+    {
+        StartCoroutine(StartGameSingleplayer());
+    }
+    public void StartMultiPlayer()
+    {
+        StartCoroutine(StartGameMultiplater());
     }
 
     public IEnumerator StartGameSingleplayer()
