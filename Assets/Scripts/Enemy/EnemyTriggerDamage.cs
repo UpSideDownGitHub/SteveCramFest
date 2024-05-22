@@ -3,8 +3,7 @@ using UnityEngine;
 
 public class EnemyTriggerDamage : MonoBehaviour
 {
-    public float attackTime;
-    public bool attacked;
+    [HideInInspector] public bool attacked;
 
     public void OnTriggerEnter2D(Collider2D collision)
     {

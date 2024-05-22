@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UIElements;
 using static UnityEngine.RuleTile.TilingRuleOutput;
+using Transform = UnityEngine.Transform;
 
 public class Enemy : MonoBehaviour
 {
@@ -50,6 +51,7 @@ public class Enemy : MonoBehaviour
     [Header("Melee")]
     public GameObject weaponTrigger;
     public float meleeDistance;
+    public bool inRange;
 
     [Header("Multiplayer")]
     public float playerSearchTime;
@@ -165,18 +167,30 @@ public class Enemy : MonoBehaviour
         }
         if (!shoots)
         {
-            var dist = Vector3.Distance(transform.position, player.transform.position);
-            if (dist < meleeDistance)
-            {
-                AttackAnimation();
-            }
-        }
+            RaycastHit2D hitRight;
+            if (movingRight)
+                hitRight = Physics2D.Raycast(directionCheck.transform.position, directionCheck.transform.right, meleeDistance);
+            else
+                hitRight = Physics2D.Raycast(directionCheck.transform.position, -directionCheck.transform.right, meleeDistance);
 
+            if (hitRight.collider)
+            {
+                if (hitRight.collider.CompareTag("Player"))
+                {
+                    inRange = true;
+                    AttackAnimation();
+                }
+            }
+            else
+                inRange = false;
+        }
     }
 
     private void AttackAnimation()
     {
         enemyAnimator.SetTrigger("Attack");
+        if (moveSpeed == 0)
+            return;
         StartCoroutine(StartRun());
         moveSpeed = 0;
     }
