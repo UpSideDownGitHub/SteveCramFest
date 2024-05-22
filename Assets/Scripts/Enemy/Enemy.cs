@@ -1,4 +1,5 @@
 using JetBrains.Annotations;
+using System.Collections;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.AI;
@@ -19,7 +20,8 @@ public class Enemy : MonoBehaviour
 
     [Header("Animations")]
     public Animator enemyAnimator;
-    private float previousSpeed;
+    public float previousSpeed;
+    public float afterAttackDelay;
 
     [Header("Flying Enemy")]
     public NavMeshAgent agent;
@@ -164,10 +166,17 @@ public class Enemy : MonoBehaviour
 
     private void AttackAnimation()
     {
-        previousSpeed = moveSpeed;
-        moveSpeed = 0;
 
         enemyAnimator.SetTrigger("Attack");
+
+        StartCoroutine(StartRun());
+        moveSpeed = 0;
+    }
+
+    public IEnumerator StartRun()
+    {
+        yield return new WaitForSeconds(afterAttackDelay);
+        moveSpeed = previousSpeed;
     }
 
     bool IsAtEdge(bool movingtotheright)
