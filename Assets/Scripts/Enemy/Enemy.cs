@@ -47,13 +47,17 @@ public class Enemy : MonoBehaviour
     private float _timeOfNextFire;
     private float _scale;
 
+    [Header("Melee")]
+    public GameObject weaponTrigger;
+    public float meleeDistance;
+
     [Header("Multiplayer")]
     public float playerSearchTime;
     private float _timeToSearchForNextPlayer;
 
     public void Start()
     {
-            levelManager = GetComponentInParent<LevelManager>();
+        levelManager = GetComponentInParent<LevelManager>();
         _scale = transform.localScale.x;
         curHealth = maxHealth;
         player = GameObject.FindGameObjectWithTag("Player");
@@ -138,8 +142,6 @@ public class Enemy : MonoBehaviour
 
             if (hitPlayer.collider.CompareTag("Player"))
             {
-                AttackAnimation();
-
                 if (movingRight)
                     rb.velocity = new Vector2(moveSpeed * playerSeenMultiplyer, rb.velocity.y);
                 else
@@ -161,15 +163,20 @@ public class Enemy : MonoBehaviour
             else if (rb.velocity.x > 0)
                 transform.localScale = new Vector3(_scale, transform.localScale.y, transform.localScale.z);
         }
-
+        if (!shoots)
+        {
+            var dist = Vector3.Distance(transform.position, player.transform.position);
+            if (dist < meleeDistance)
+            {
+                AttackAnimation();
+            }
+        }
 
     }
 
     private void AttackAnimation()
     {
-
         enemyAnimator.SetTrigger("Attack");
-
         StartCoroutine(StartRun());
         moveSpeed = 0;
     }
@@ -178,6 +185,7 @@ public class Enemy : MonoBehaviour
     {
         yield return new WaitForSeconds(afterAttackDelay);
         moveSpeed = previousSpeed;
+        weaponTrigger.GetComponent<EnemyTriggerDamage>().attacked = false;
     }
 
     bool IsAtEdge(bool movingtotheright)
