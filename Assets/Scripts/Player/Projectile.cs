@@ -3,13 +3,13 @@ using UnityEngine.AI;
 
 public enum BulletType
 {
-    NORMALSHOT,
-    FIREBALL,
+    NORMALSHOT, // normal shot
+    FIREBALL, // large explosion
     SEEKER,
-    LIGHTNING,
-    ICESPIKE,
-    SPLITSHOT,
-    BOUNCESHOT,
+    LIGHTNING, // larger lightning
+    ICESPIKE, // ice explosion // freeze enemy
+    SPLITSHOT, // many many bullets
+    BOUNCESHOT, 
     DEATHBRINGER
 }
 

@@ -11,6 +11,8 @@ public class PlayerAttack : MonoBehaviour
 
     public float parryForce;
 
+    public int splitCount = 100;
+
     public GameObject[] reboundTypes;
     public GameObject[] reboudEffects;
 
@@ -103,22 +105,16 @@ public class PlayerAttack : MonoBehaviour
                 playerBullet3.GetComponent<Projectile>().type = BulletType.ICESPIKE;
                 break;
             case BulletType.SPLITSHOT:
-                var playerBullet4 = Instantiate(reboundTypes[5], spawnPosition, Quaternion.identity);
-                var playerBullet5 = Instantiate(reboundTypes[5], spawnPosition, Quaternion.identity);
-                var playerBullet6 = Instantiate(reboundTypes[5], spawnPosition, Quaternion.identity);
-                var direction1 = new Vector2(direction.x, direction.y + 1);
-                var direction2 = new Vector2(direction.x, direction.y - 1);
-                float angle2 = Mathf.Atan2(direction1.y, direction1.x) * Mathf.Rad2Deg;
-                float angle3 = Mathf.Atan2(direction2.y, direction2.x) * Mathf.Rad2Deg;
-                playerBullet4.transform.rotation = Quaternion.Euler(0, 0, angle2);
-                playerBullet5.transform.rotation = Quaternion.Euler(0, 0, angle);
-                playerBullet6.transform.rotation = Quaternion.Euler(0, 0, angle3);
-                playerBullet4.GetComponent<Rigidbody2D>().AddForce(playerBullet4.transform.right * parryForce);
-                playerBullet5.GetComponent<Rigidbody2D>().AddForce(playerBullet5.transform.right * parryForce);
-                playerBullet6.GetComponent<Rigidbody2D>().AddForce(playerBullet6.transform.right * parryForce);
-                playerBullet4.GetComponent<Projectile>().type = BulletType.SPLITSHOT;
-                playerBullet5.GetComponent<Projectile>().type = BulletType.SPLITSHOT;
-                playerBullet6.GetComponent<Projectile>().type = BulletType.SPLITSHOT;
+                for (int i = 0; i < splitCount; i++)
+                {
+                    var playerBullet4 = Instantiate(reboundTypes[5], spawnPosition, Quaternion.identity);
+                    var direction1 = new Vector2(direction.x + Random.Range(-10, 10), direction.y + Random.Range(-10, 10));
+                    float angle2 = Mathf.Atan2(direction1.y, direction1.x) * Mathf.Rad2Deg;
+                    playerBullet4.transform.rotation = Quaternion.Euler(0, 0, angle2);
+                    playerBullet4.GetComponent<Rigidbody2D>().AddForce(playerBullet4.transform.right * parryForce);
+                    playerBullet4.GetComponent<Projectile>().type = BulletType.SPLITSHOT;
+
+                }
                 break;
             case BulletType.BOUNCESHOT:
                 var playerBullet7 = Instantiate(reboundTypes[6], spawnPosition, Quaternion.identity);

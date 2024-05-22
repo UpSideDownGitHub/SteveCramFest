@@ -23,9 +23,9 @@ TagManager:
   - Bullets
   - Player
   - Enemy
-  - 
-  - 
-  - 
+  - PBullets
+  - Enemy
+  - Enemy Player Attack
   - 
   - 
   - 
