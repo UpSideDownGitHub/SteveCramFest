@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Net;
 using UnityEngine;
 
@@ -11,7 +12,6 @@ public class PlayerAttack : MonoBehaviour
 
     public GameObject[] reboundTypes;
 
-    public UI playerHUD;
     public Player player;
 
     public void OnEnable()
@@ -109,7 +109,6 @@ public class PlayerAttack : MonoBehaviour
                 playerBullet8.GetComponent<Projectile>().type = BulletType.DEATHBRINGER;
                 break;
         }
-
-        playerHUD.SetActiveGem();
+        player.ui.SetActiveGem(player.parryList.ToArray());
     }
 }

@@ -4914,7 +4914,7 @@ MonoBehaviour:
   agent: {fileID: 0}
   maxHits: 3
   curHits: 0
-  rb: {fileID: 0}
+  rb: {fileID: -9081093655749301635}
   movementSpeed: 300
 --- !u!1 &7459888570520652885
 GameObject:

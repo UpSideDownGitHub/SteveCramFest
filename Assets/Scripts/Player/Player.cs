@@ -32,6 +32,14 @@ public class Player : MonoBehaviour
     public GameObject sword;
     public float attackTime;
     public Queue<BulletType> parryList = new();
+
+
+    // | | |
+    // 0 | |
+    // 0 1 |
+    // 1 | |
+
+
     private float _timeOfNextAttack;
 
     [Header("Health")]
