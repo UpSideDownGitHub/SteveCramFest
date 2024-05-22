@@ -32,15 +32,20 @@ public class Player : MonoBehaviour
     public Queue<BulletType> parryList = new();
     private float _timeOfNextAttack;
 
-    public float closeTime;
-    public float _timeofclose;
-
     [Header("Health")]
     public int maxHealth;
     public int currentHealth;
 
+    [Header("Iframes")]
+    public float iframeTime;
+    private float _timeOfNoIFrame;
+    public bool invinsable;
+
     [Header("Points")]
     public int points;
+
+    [Header("Quitting")]
+    public string mainScene;
 
     private float _movement;
     private Collider2D _currentPlatform;
@@ -54,19 +59,9 @@ public class Player : MonoBehaviour
     public void ShootPressed(InputAction.CallbackContext ctx)
     {
         if (ctx.action.WasPressedThisFrame())
-        {
             _shootPressed = true;
-            _timeofclose = Time.time + closeTime;
-        }
         else if (ctx.action.WasReleasedThisFrame())
-        {
             _shootPressed = false;
-            if (Time.time > _timeofclose)
-            {
-                Application.Quit();
-                Debug.Log("QUITTING...");
-            }
-        }
     }
 
     public void JumpPressed(InputAction.CallbackContext ctx)
@@ -87,6 +82,14 @@ public class Player : MonoBehaviour
     public void MovementPressed(InputAction.CallbackContext ctx)
     {
         _movement = ctx.ReadValue<float>();
+    }
+
+    public void StartButtonPressed(InputAction.CallbackContext ctx)
+    {
+        if (ctx.action.WasPressedThisFrame())
+        {
+            SceneManager.LoadSceneAsync(mainScene);
+        }
     }
 
     public bool Grounded
@@ -121,14 +124,21 @@ public class Player : MonoBehaviour
             _currentPlatform = collision.collider;
         if (collision.gameObject.layer == 7)
         {
+            if (invinsable)
+            {
+                Destroy(collision.gameObject);
+                return;
+            }
+
             currentHealth  = currentHealth - 1 <= 0 ? 0 : currentHealth - 1;
             ui.SetHearts(currentHealth);
+            invinsable = true;
+            _timeOfNoIFrame = Time.time + iframeTime;
             if (currentHealth == 0)
             {
                 // END GAME CODE GOES HERE
                 SceneManager.LoadScene("MainMenu");
             }
-            Destroy(collision.gameObject);
         }
     }
 
@@ -155,6 +165,11 @@ public class Player : MonoBehaviour
     {
         if (freeze)
             return;
+
+        if (Time.time > _timeOfNoIFrame)
+        {
+            invinsable = false; 
+        }
 
         if (_shootPressed)
             ShootPressed();
