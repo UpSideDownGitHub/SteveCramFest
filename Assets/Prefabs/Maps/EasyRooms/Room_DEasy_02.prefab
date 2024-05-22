@@ -607,8 +607,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63bb6d398831ce7468d93fe55e7dee5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalEnemies: 1
-  currentEnemies: 1
+  totalEnemies: 4
+  currentEnemies: 4
   levelDoor: {fileID: 3090027950876052044}
   spawnDoor: {fileID: 5509240326203456165}
 --- !u!1 &2137259356621125535
@@ -7706,8 +7706,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 4.4373493, y: -1.7315998, z: 0}
-    m_Extent: {x: 41.295853, y: 22.3601, z: 0}
+    m_Center: {x: 4.43795, y: -1.7277002, z: 0}
+    m_Extent: {x: 41.29285, y: 22.3693, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -7997,8 +7997,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 3.61615, y: -1.8859501, z: 0}
-    m_Extent: {x: 26.82435, y: 6.1915503, z: 0}
+    m_Center: {x: 3.6188498, y: -1.8841999, z: 0}
+    m_Extent: {x: 26.82685, y: 6.1885996, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
