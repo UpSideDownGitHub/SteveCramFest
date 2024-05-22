@@ -472,7 +472,7 @@ MonoBehaviour:
   fireRate: 2
   fireForce: 300
   weaponTrigger: {fileID: 4829980131176227566}
-  meleeDistance: 5
+  meleeDistance: 3
   inRange: 0
   playerSearchTime: 0
 --- !u!50 &6926704948354230356
