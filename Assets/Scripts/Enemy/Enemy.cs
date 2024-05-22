@@ -1,6 +1,7 @@
 using JetBrains.Annotations;
 using System.Collections;
 using System.Threading;
+using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UIElements;
@@ -15,6 +16,9 @@ public class Enemy : MonoBehaviour
     public float maxHealth;
     public float curHealth;
     public bool canTakeDamage;
+    public float dissolveTime;
+    public SpriteRenderer enemySprite;
+    private int _dissolveAmmount = Shader.PropertyToID("_DissolveAmmount");
 
     [Header("Navigation")]
     public bool flying;
@@ -209,6 +213,21 @@ public class Enemy : MonoBehaviour
         weaponTrigger.gameObject.SetActive(false);
     }
 
+
+    public IEnumerator Vanish()
+    {
+        GetComponent<Collider2D>().enabled = false;
+        float elapsedTime = 0f;
+        while (elapsedTime < dissolveTime)
+        {
+            elapsedTime += Time.deltaTime;
+            float lerpedDissolve = Mathf.Lerp(0, 1f, (elapsedTime / dissolveTime));
+            enemySprite.material.SetFloat(_dissolveAmmount, lerpedDissolve);
+            yield return null;
+        }
+        Destroy(gameObject);
+    }
+
     bool IsAtEdge(bool movingtotheright)
     {
         RaycastHit2D hitDown = Physics2D.Raycast(directionCheck.transform.position, -directionCheck.transform.up, changeCheckDistance);
@@ -238,7 +257,7 @@ public class Enemy : MonoBehaviour
             Instantiate(powerups[Random.Range(0, powerups.Length)], transform.position, Quaternion.identity);
 
             levelManager.EnemyKilled();
-            Destroy(gameObject);
+            StartCoroutine(Vanish());
         }
     }
 }

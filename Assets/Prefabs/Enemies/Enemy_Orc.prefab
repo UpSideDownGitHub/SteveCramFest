@@ -344,6 +344,8 @@ MonoBehaviour:
   maxHealth: 4
   curHealth: 4
   canTakeDamage: 1
+  dissolveTime: 1
+  enemySprite: {fileID: 7544082039737918771}
   flying: 0
   player: {fileID: 0}
   enemyAnimator: {fileID: 5647821931790391392}
@@ -452,6 +454,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 594524879884163899, guid: 1171a077d679be7438469a8d80db43bf, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 18221fe7fd39f0d4c83a4d1ca834b09a, type: 2}
     - target: {fileID: 1299605367628677224, guid: 1171a077d679be7438469a8d80db43bf, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -512,6 +518,11 @@ PrefabInstance:
 --- !u!95 &5647821931790391392 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 3355396681114707560, guid: 1171a077d679be7438469a8d80db43bf, type: 3}
+  m_PrefabInstance: {fileID: 6985605974675111432}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &7544082039737918771 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 594524879884163899, guid: 1171a077d679be7438469a8d80db43bf, type: 3}
   m_PrefabInstance: {fileID: 6985605974675111432}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &8284648236487671392 stripped
