@@ -17,6 +17,8 @@ public class Player : MonoBehaviour
     [Header("Jumping")]
     public float floorCheckDistance = 0.1f;
     public float jumpForce;
+    public int jumpCount;
+    private int currentJumps;
 
     [Header("Movement")]
     public float movementSpeed;
@@ -100,7 +102,10 @@ public class Player : MonoBehaviour
             foreach (var hit in hits)
             {
                 if (hit.collider.CompareTag("Ground"))
-                    return true;
+                {
+                    currentJumps = jumpCount;
+                    return true; 
+                }
             }
             return false;
         }
@@ -187,7 +192,7 @@ public class Player : MonoBehaviour
                 transform.localScale = new Vector3(_scale, transform.localScale.y, transform.localScale.z);
 
 
-            rb.AddForce(transform.right * movementSpeed * _movement * Time.deltaTime, ForceMode2D.Impulse);
+            rb.AddForce(transform.right * movementSpeed * _movement * Time.deltaTime, ForceMode2D.Force);
             rb.velocity = new Vector2(Mathf.Abs(rb.velocity.x) > maxSpeed ? rb.velocity.x > 0 ? maxSpeed : -maxSpeed : rb.velocity.x, rb.velocity.y);
         }
         else
@@ -216,7 +221,12 @@ public class Player : MonoBehaviour
     {
         if (freeze)
             return;
-        if (Grounded)
-            rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+
+        if (Grounded || currentJumps > 0)
+        {
+            currentJumps--;
+            rb.velocity = new Vector2(rb.velocity.x, 0);
+            rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse); 
+        }
     }
 }
