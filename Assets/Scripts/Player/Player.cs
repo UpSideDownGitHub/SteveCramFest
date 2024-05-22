@@ -132,7 +132,7 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.layer == platformLayer)
             _currentPlatform = collision.collider;
-        if (collision.gameObject.layer == 7 || collision.gameObject.CompareTag("Hazard"))
+        if ((collision.gameObject.layer == 7 && !collision.gameObject.GetComponent<Projectile>().playerOwned) || collision.gameObject.CompareTag("Hazard"))
         {
             TakeDamage();
             if (!collision.gameObject.CompareTag("Hazard"))

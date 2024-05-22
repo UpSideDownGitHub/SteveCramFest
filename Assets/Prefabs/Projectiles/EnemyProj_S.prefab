@@ -4852,7 +4852,6 @@ GameObject:
   - component: {fileID: 2531183139055081733}
   - component: {fileID: 3510078038034162036}
   - component: {fileID: -5485497848533227310}
-  - component: {fileID: 974041085919605316}
   m_Layer: 7
   m_Name: EnemyProj_S
   m_TagString: Untagged
@@ -4963,8 +4962,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0.1
-  m_AngularDrag: 0.1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: fcfa1925800a21c45be40ecbbcfe67b6, type: 2}
   m_IncludeLayers:
@@ -5034,19 +5033,6 @@ MonoBehaviour:
   curHits: 0
   rb: {fileID: 0}
   movementSpeed: 0
---- !u!114 &974041085919605316
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1868487987691235785}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ece64f2f96de8384fb4108b7fb816337, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destroyTime: 5
 --- !u!1 &8970561964013949336
 GameObject:
   m_ObjectHideFlags: 0
