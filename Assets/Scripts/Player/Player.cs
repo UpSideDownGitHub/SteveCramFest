@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     public Rigidbody2D rb;
     public Collider2D col;
     public UI ui;
+    public bool singlePlayer;
 
     [Header("Jumping")]
     public float floorCheckDistance = 0.1f;
@@ -32,14 +33,6 @@ public class Player : MonoBehaviour
     public GameObject sword;
     public float attackTime;
     public Queue<BulletType> parryList = new();
-
-
-    // | | |
-    // 0 | |
-    // 0 1 |
-    // 1 | |
-
-
     private float _timeOfNextAttack;
 
     [Header("Health")]
@@ -150,8 +143,19 @@ public class Player : MonoBehaviour
             if (currentHealth == 0)
             {
                 // END GAME CODE GOES HERE
-                SceneManager.LoadScene("MainMenu");
+                if (singlePlayer)
+                {
+                    PlayerPrefs.SetInt("ScoreP1", points);
+                    PlayerPrefs.SetInt("Multiplayer", 0);
+                    SceneManager.LoadScene("Results");
+                }
+                else
+                {
+                    GameObject.FindGameObjectWithTag("Manager").GetComponent<Manager>().PlayerDied();
+                    gameObject.SetActive(false);
+                }
             }
+            Destroy(collision.gameObject);
         }
     }
 

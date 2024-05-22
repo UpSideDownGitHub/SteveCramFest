@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     [Header("Health")]
     public float maxHealth;
     public float curHealth;
+    public bool canTakeDamage;
 
     [Header("Navigation")]
     public bool flying;
@@ -196,6 +197,8 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        if (!canTakeDamage)
+            return;
         curHealth = curHealth - damage < 0 ? 0 : curHealth - damage;
 
         if (curHealth == 0)

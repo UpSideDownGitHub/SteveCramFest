@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Manager : MonoBehaviour
 {
@@ -13,6 +14,19 @@ public class Manager : MonoBehaviour
 
     [Header("Player")]
     public GameObject[] players;
+    public int currentPlayersDead;
+
+    public void PlayerDied()
+    {
+        currentPlayersDead++;
+        if (currentPlayersDead == players.Length)
+        {
+            PlayerPrefs.SetInt("ScoreP1", players[0].GetComponent<Player>().points);
+            PlayerPrefs.SetInt("ScoreP2", players[1].GetComponent<Player>().points);
+            PlayerPrefs.SetInt("Multiplayer", 1);
+            SceneManager.LoadScene("Results");
+        }
+    }
 
     public void SpawnNewLevel()
     {
@@ -42,6 +56,11 @@ public class Manager : MonoBehaviour
         foreach (var player in players)
         {
             player.GetComponent<Player>().freeze = false;
+            if (player.GetComponent<Player>().currentHealth == 0)
+            {
+                player.SetActive(true);
+                player.GetComponent<Player>().currentHealth++;
+            }
         }
         Fade.SetActive(false);
         changingLevel = false;
