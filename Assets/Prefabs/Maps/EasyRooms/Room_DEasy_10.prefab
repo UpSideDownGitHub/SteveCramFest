@@ -5179,7 +5179,7 @@ Transform:
   m_GameObject: {fileID: 1210792872045415884}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 62.56, y: -2.85, z: 0}
+  m_LocalPosition: {x: 64.33, y: -2.85, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -27135,19 +27135,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2556757904575808591, guid: 1ec9e71ef72f7f4419df7c2260a958ba, type: 3}
       propertyPath: m_LocalBounds.m_Center.x
-      value: 5.3793497
+      value: 5.3699493
       objectReference: {fileID: 0}
     - target: {fileID: 2556757904575808591, guid: 1ec9e71ef72f7f4419df7c2260a958ba, type: 3}
       propertyPath: m_LocalBounds.m_Center.y
-      value: -0.5924499
+      value: -0.605
       objectReference: {fileID: 0}
     - target: {fileID: 2556757904575808591, guid: 1ec9e71ef72f7f4419df7c2260a958ba, type: 3}
       propertyPath: m_LocalBounds.m_Extent.x
-      value: 22.20715
+      value: 22.20685
       objectReference: {fileID: 0}
     - target: {fileID: 2556757904575808591, guid: 1ec9e71ef72f7f4419df7c2260a958ba, type: 3}
       propertyPath: m_LocalBounds.m_Extent.y
-      value: 6.02415
+      value: 6.0214
       objectReference: {fileID: 0}
     - target: {fileID: 7240982446478584390, guid: 1ec9e71ef72f7f4419df7c2260a958ba, type: 3}
       propertyPath: m_Name
@@ -27308,19 +27308,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 179543234284929645, guid: 0000d909723245f449b21056d7eddbee, type: 3}
       propertyPath: m_LocalBounds.m_Center.x
-      value: 5.3686495
+      value: 5.3669004
       objectReference: {fileID: 0}
     - target: {fileID: 179543234284929645, guid: 0000d909723245f449b21056d7eddbee, type: 3}
       propertyPath: m_LocalBounds.m_Center.y
-      value: -0.59660006
+      value: -0.5975001
       objectReference: {fileID: 0}
     - target: {fileID: 179543234284929645, guid: 0000d909723245f449b21056d7eddbee, type: 3}
       propertyPath: m_LocalBounds.m_Extent.x
-      value: 22.21305
+      value: 22.2137
       objectReference: {fileID: 0}
     - target: {fileID: 179543234284929645, guid: 0000d909723245f449b21056d7eddbee, type: 3}
       propertyPath: m_LocalBounds.m_Extent.y
-      value: 6.0249
+      value: 6.028
       objectReference: {fileID: 0}
     - target: {fileID: 2372955879290002624, guid: 0000d909723245f449b21056d7eddbee, type: 3}
       propertyPath: m_Name
@@ -27510,7 +27510,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 749484017259807757, guid: 11bdc6c44f0105e4faed2119131f6c36, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -75.51944
+      value: -78.42
       objectReference: {fileID: 0}
     - target: {fileID: 749484017259807757, guid: 11bdc6c44f0105e4faed2119131f6c36, type: 3}
       propertyPath: m_LocalPosition.y
@@ -27552,6 +27552,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Window With Light glow (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 4672532051308326929, guid: 11bdc6c44f0105e4faed2119131f6c36, type: 3}
+      propertyPath: m_PointLightOuterAngle
+      value: 99.13004
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -27572,7 +27576,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 749484017259807757, guid: 11bdc6c44f0105e4faed2119131f6c36, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -100.51944
+      value: -97.32
       objectReference: {fileID: 0}
     - target: {fileID: 749484017259807757, guid: 11bdc6c44f0105e4faed2119131f6c36, type: 3}
       propertyPath: m_LocalPosition.y
@@ -27613,6 +27617,10 @@ PrefabInstance:
     - target: {fileID: 4549534170258304117, guid: 11bdc6c44f0105e4faed2119131f6c36, type: 3}
       propertyPath: m_Name
       value: Window With Light glow
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672532051308326929, guid: 11bdc6c44f0105e4faed2119131f6c36, type: 3}
+      propertyPath: m_PointLightOuterAngle
+      value: 99.13004
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
