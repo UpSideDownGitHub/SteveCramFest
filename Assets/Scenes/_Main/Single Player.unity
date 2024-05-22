@@ -412,6 +412,7 @@ MonoBehaviour:
   changingLevel: 0
   players:
   - {fileID: 1772595031}
+  currentPlayersDead: 0
 --- !u!1 &874946999
 GameObject:
   m_ObjectHideFlags: 0
@@ -1058,6 +1059,7 @@ MonoBehaviour:
   rb: {fileID: 1772595033}
   col: {fileID: 1772595038}
   ui: {fileID: 0}
+  singlePlayer: 1
   floorCheckDistance: 0.55
   jumpForce: 30
   jumpCount: 2
@@ -1762,7 +1764,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4921599355465471333, guid: ce9434cadd19bb8429609de4f5a51a05, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5133454776389875397, guid: ce9434cadd19bb8429609de4f5a51a05, type: 3}
       propertyPath: m_IsActive
