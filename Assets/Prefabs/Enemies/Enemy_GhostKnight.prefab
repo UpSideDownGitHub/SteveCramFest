@@ -121,7 +121,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b8158adb25a0c14586c4529d468c65a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attacked: 0
 --- !u!1 &5023364409183028088
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,6 +474,13 @@ MonoBehaviour:
   meleeDistance: 3
   inRange: 0
   playerSearchTime: 0
+  powerups:
+  - {fileID: 4268323852765727109, guid: 565f51057b9b52a489632af1dc626a91, type: 3}
+  - {fileID: 4268323852765727109, guid: e6756c4f33c4c704682527c26e41bd7d, type: 3}
+  - {fileID: 4268323852765727109, guid: b67a51f1a67f6734ba717748c5e0ac94, type: 3}
+  - {fileID: 4268323852765727109, guid: 2216e473d6eb9c3498566bf0e4bb4599, type: 3}
+  - {fileID: 4268323852765727109, guid: e2f8ecf6f284dd241971add349f8c455, type: 3}
+  - {fileID: 4268323852765727109, guid: ce63c2a9dbb3c0b4baac7355b328f423, type: 3}
 --- !u!50 &6926704948354230356
 Rigidbody2D:
   serializedVersion: 4

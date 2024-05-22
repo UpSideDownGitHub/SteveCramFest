@@ -219,8 +219,12 @@ MonoBehaviour:
   levelManager: {fileID: 0}
   maxHealth: 1
   curHealth: 1
+  canTakeDamage: 1
   flying: 1
   player: {fileID: 0}
+  enemyAnimator: {fileID: 0}
+  previousSpeed: 0
+  afterAttackDelay: 0
   agent: {fileID: 5828555433620388341}
   noticeRange: {x: 0, y: 3}
   rb: {fileID: 0}
@@ -235,7 +239,17 @@ MonoBehaviour:
   firePoint: {fileID: 4013443948759870660}
   fireRate: 2
   fireForce: 300
+  weaponTrigger: {fileID: 0}
+  meleeDistance: 0
+  inRange: 0
   playerSearchTime: 0
+  powerups:
+  - {fileID: 4268323852765727109, guid: 565f51057b9b52a489632af1dc626a91, type: 3}
+  - {fileID: 4268323852765727109, guid: e6756c4f33c4c704682527c26e41bd7d, type: 3}
+  - {fileID: 4268323852765727109, guid: b67a51f1a67f6734ba717748c5e0ac94, type: 3}
+  - {fileID: 4268323852765727109, guid: 2216e473d6eb9c3498566bf0e4bb4599, type: 3}
+  - {fileID: 4268323852765727109, guid: e2f8ecf6f284dd241971add349f8c455, type: 3}
+  - {fileID: 4268323852765727109, guid: ce63c2a9dbb3c0b4baac7355b328f423, type: 3}
 --- !u!195 &5828555433620388341
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -250,7 +264,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 7.5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
