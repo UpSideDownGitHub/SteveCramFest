@@ -64,5 +64,7 @@ public class Manager : MonoBehaviour
         }
         Fade.SetActive(false);
         changingLevel = false;
+        currentLevel.GetComponent<LevelManager>().spawnDoor.GetComponent<Animator>().SetTrigger("Open");
+        currentLevel.GetComponent<LevelManager>().spawnDoor.GetComponent<Animator>().SetTrigger("Close");
     }
 }
