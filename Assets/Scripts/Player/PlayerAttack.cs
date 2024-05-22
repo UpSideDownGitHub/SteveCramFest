@@ -10,6 +10,8 @@ public class PlayerAttack : MonoBehaviour
     public float parryForce;
 
     public GameObject[] reboundTypes;
+
+    public UI playerHUD;
     public Player player;
 
     public void OnEnable()
@@ -107,5 +109,7 @@ public class PlayerAttack : MonoBehaviour
                 playerBullet8.GetComponent<Projectile>().type = BulletType.DEATHBRINGER;
                 break;
         }
+
+        playerHUD.SetActiveGem();
     }
 }
