@@ -186,7 +186,7 @@ GameObject:
   - component: {fileID: 9044299808244447010}
   - component: {fileID: 6510632138051462291}
   m_Layer: 0
-  m_Name: Proj_Seeker
+  m_Name: Proj_Seeker - Copy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

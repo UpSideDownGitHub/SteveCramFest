@@ -4855,7 +4855,7 @@ GameObject:
   - component: {fileID: 3009735969603519446}
   - component: {fileID: 5295189768990648057}
   m_Layer: 7
-  m_Name: BounceShot
+  m_Name: BounceShot - Copy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
