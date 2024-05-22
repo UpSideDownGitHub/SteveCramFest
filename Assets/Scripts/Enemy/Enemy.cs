@@ -226,6 +226,8 @@ public class Enemy : MonoBehaviour
 
         if (curHealth == 0)
         {
+            if (levelManager == null)
+                levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
             levelManager.EnemyKilled();
             Destroy(gameObject);
         }

@@ -15,6 +15,7 @@ public class LevelManager : MonoBehaviour
         if (currentEnemies == 0)
         {
             levelDoor.activated = true;
+            levelDoor.GetComponent<Animator>().SetTrigger("Open");
         }
     }
 }
