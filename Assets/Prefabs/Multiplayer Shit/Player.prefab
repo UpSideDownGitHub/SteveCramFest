@@ -398,7 +398,7 @@ GameObject:
   - component: {fileID: 8030223019111807268}
   - component: {fileID: 861447791611546034}
   - component: {fileID: 3211435004188870392}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Sword Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
