@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4782428824975907576}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Fire Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6250502997493901143}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Direction Check
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 5023364409183028088}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.561, y: -0.492, z: 0}
+  m_LocalPosition: {x: 0.189, y: -0.636, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -72,7 +72,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8533046401410675418}
   - component: {fileID: 8312865029035639275}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Directoin Identifyer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,7 +159,7 @@ GameObject:
   - component: {fileID: 5381874566262567711}
   - component: {fileID: 6926704948354230356}
   - component: {fileID: 7316285195396622562}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy_Orc
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -255,6 +255,8 @@ MonoBehaviour:
   flying: 0
   player: {fileID: 0}
   enemyAnimator: {fileID: 5647821931790391392}
+  previousSpeed: 2
+  afterAttackDelay: 0.7
   agent: {fileID: 0}
   noticeRange: {x: 0, y: 3}
   rb: {fileID: 6926704948354230356}
@@ -312,7 +314,7 @@ CapsuleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -329,8 +331,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.16242544, y: 0.012890816}
-  m_Size: {x: 1.0257825, y: 1.4073538}
+  m_Offset: {x: -0.21656744, y: -0.118596554}
+  m_Size: {x: 0.56686544, y: 1.144379}
   m_Direction: 0
 --- !u!1001 &6985605974675111432
 PrefabInstance:
@@ -343,6 +345,10 @@ PrefabInstance:
     - target: {fileID: 545421520600761425, guid: 1171a077d679be7438469a8d80db43bf, type: 3}
       propertyPath: m_Name
       value: OrcAnimations
+      objectReference: {fileID: 0}
+    - target: {fileID: 545421520600761425, guid: 1171a077d679be7438469a8d80db43bf, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1299605367628677224, guid: 1171a077d679be7438469a8d80db43bf, type: 3}
       propertyPath: m_LocalScale.x
