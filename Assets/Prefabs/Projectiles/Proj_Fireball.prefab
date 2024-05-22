@@ -209,7 +209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ece64f2f96de8384fb4108b7fb816337, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyTime: 5
+  destroyTime: 10
 --- !u!96 &7034543908571930036
 TrailRenderer:
   serializedVersion: 3
