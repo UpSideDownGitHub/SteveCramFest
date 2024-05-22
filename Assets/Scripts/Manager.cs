@@ -52,7 +52,7 @@ public class Manager : MonoBehaviour
             player.GetComponent<Player>().freeze = true;
             player.transform.position = spawnPosition;
         }
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         foreach (var player in players)
         {
             player.GetComponent<Player>().freeze = false;

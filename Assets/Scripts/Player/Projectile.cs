@@ -111,9 +111,13 @@ public class Projectile : MonoBehaviour
                     if (curHits == maxHits)
                         Destroy(gameObject);
                     target = FindClosestEnemy(target);
+                    if (target == null)
+                        Destroy(gameObject);
                     var dir = target.transform.position - transform.position;
                     rb.velocity = Vector2.zero;
-                    rb.AddForce(dir * movementSpeed);
+                    float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+                    transform.rotation = Quaternion.Euler(0, 0, angle);
+                    rb.AddForce(transform.right * movementSpeed);
                 }
                 break;
         }

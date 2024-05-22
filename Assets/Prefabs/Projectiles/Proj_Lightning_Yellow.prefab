@@ -4913,9 +4913,9 @@ MonoBehaviour:
   target: {fileID: 0}
   agent: {fileID: 0}
   maxHits: 3
-  curHits: 0
+  curHits: 3
   rb: {fileID: -9081093655749301635}
-  movementSpeed: 300
+  movementSpeed: 500
 --- !u!1 &7459888570520652885
 GameObject:
   m_ObjectHideFlags: 0

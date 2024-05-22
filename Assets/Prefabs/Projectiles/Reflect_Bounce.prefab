@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 1182940990662329556}
   - component: {fileID: 7575009917544109163}
   - component: {fileID: 8338778420508706076}
+  - component: {fileID: -1064479408324069440}
   m_Layer: 0
   m_Name: Reflect_Bounce
   m_TagString: Untagged
@@ -108,14 +109,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4119529866725857567}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.43438888, w: -0.9007255}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -744.83, y: -39.09, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5328666869751688134}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 308.507}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!198 &7575009917544109163
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -4974,3 +4975,16 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &-1064479408324069440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4119529866725857567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ece64f2f96de8384fb4108b7fb816337, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyTime: 1

@@ -57,6 +57,9 @@ public class Enemy : MonoBehaviour
     public float playerSearchTime;
     private float _timeToSearchForNextPlayer;
 
+    [Header("Powerups")]
+    public GameObject[] powerups;
+
     public void Start()
     {
         levelManager = GetComponentInParent<LevelManager>();
@@ -105,25 +108,6 @@ public class Enemy : MonoBehaviour
             if (Time.time > _startTime)
             {
                 agent.SetDestination(player.transform.position);
-            }
-
-            if (Time.time > _timeOfNextFire && shoots)
-            {
-                var dir = player.transform.position - firePoint.transform.position;
-                dir.Normalize();
-                RaycastHit2D[] hits = Physics2D.RaycastAll(firePoint.transform.position, dir);
-                foreach (var hit in hits)
-                {
-                    if (hit.collider.CompareTag("Ground") && hit.transform.gameObject.layer != 6)
-                        break;
-                    if (hit.collider.CompareTag("Player"))
-                    {
-                        _timeOfNextFire = Time.time + fireRate;
-                        var bulletTemp = Instantiate(bullet, firePoint.transform.position, Quaternion.identity);
-                        bulletTemp.GetComponent<Rigidbody2D>().AddForce(dir * fireForce);
-                        bulletTemp.GetComponent<Projectile>().shooter = gameObject;
-                    }
-                }
             }
 
             if (agent.velocity.x < 0)
@@ -184,6 +168,27 @@ public class Enemy : MonoBehaviour
             else
                 inRange = false;
         }
+        else
+        {
+            if (Time.time > _timeOfNextFire && shoots)
+            {
+                var dir = player.transform.position - firePoint.transform.position;
+                dir.Normalize();
+                RaycastHit2D[] hits = Physics2D.RaycastAll(firePoint.transform.position, dir);
+                foreach (var hit in hits)
+                {
+                    if (hit.collider.CompareTag("Ground") && hit.transform.gameObject.layer != 6)
+                        break;
+                    if (hit.collider.CompareTag("Player"))
+                    {
+                        _timeOfNextFire = Time.time + fireRate;
+                        var bulletTemp = Instantiate(bullet, firePoint.transform.position, Quaternion.identity);
+                        bulletTemp.GetComponent<Rigidbody2D>().AddForce(dir * fireForce);
+                        bulletTemp.GetComponent<Projectile>().shooter = gameObject;
+                    }
+                }
+            }
+        }
     }
 
     private void AttackAnimation()
@@ -197,6 +202,7 @@ public class Enemy : MonoBehaviour
 
     public IEnumerator StartRun()
     {
+        yield return new WaitForSeconds(0.2f);
         weaponTrigger.gameObject.SetActive(true);
         yield return new WaitForSeconds(afterAttackDelay);
         moveSpeed = previousSpeed;
@@ -228,6 +234,9 @@ public class Enemy : MonoBehaviour
         {
             if (levelManager == null)
                 levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
+
+            Instantiate(powerups[Random.Range(0, powerups.Length)], transform.position, Quaternion.identity);
+
             levelManager.EnemyKilled();
             Destroy(gameObject);
         }
