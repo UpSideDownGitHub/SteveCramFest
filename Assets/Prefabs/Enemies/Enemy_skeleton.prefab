@@ -449,6 +449,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1509882517825823392, guid: 30d1328070161284f9d5c079660dcd3b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2457490673122381204, guid: 30d1328070161284f9d5c079660dcd3b, type: 3}
       propertyPath: m_Name
       value: SkeletonRunAnim
