@@ -1216,20 +1216,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1772595033}
   col: {fileID: 1772595034}
+  ui: {fileID: 0}
   floorCheckDistance: 0.55
   jumpForce: 13
+  jumpCount: 0
   movementSpeed: 75
   maxSpeed: 20
   platformLayer: 6
   passthroughTime: 0.5
   sword: {fileID: 1553136368}
   attackTime: 0.5
-  closeTime: 2
-  _timeofclose: 0
   maxHealth: 100
   currentHealth: 0
+  iframeTime: 0
+  invinsable: 0
+  points: 0
+  mainScene: 
   _downPressed: 0
   _shootPressed: 0
+  freeze: 0
 --- !u!50 &1772595033
 Rigidbody2D:
   serializedVersion: 4
@@ -1476,6 +1481,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: ff4d8c8b-cc11-4e0d-852b-98ad15bb9768
     m_ActionName: Gameplay/Up[/XInputControllerWindows/dpad/up]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9e16b4d4-e0be-47e8-a96e-321604c89741
+    m_ActionName: Gameplay/StartButton
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
