@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
@@ -11,8 +12,12 @@ public class MainMenu : MonoBehaviour
     public GameObject ModeSelection;
     public GameObject button1;
 
-    public void StartPressed()
+    public IEnumerator StartPressed()
     {
+        Main.GetComponent<Animator>().SetTrigger("Play");
+
+        yield return new WaitForSeconds(1);
+
         Main.SetActive(false);
         ModeSelection.SetActive(true);
         EventSystem.current.SetSelectedGameObject(button1);
@@ -28,12 +33,21 @@ public class MainMenu : MonoBehaviour
         ModeSelection.SetActive(false);
     }
 
-    public void StartGameSingleplayer()
+    public IEnumerator StartGameSingleplayer()
     {
+        yield return new WaitForSeconds(1);
+
         SceneManager.LoadScene(singleplayerScene);
     }
-    public void StartGameMultiplater()
+    public IEnumerator StartGameMultiplater()
     {
+        yield return new WaitForSeconds(1);
+
         SceneManager.LoadScene(multiplayerScene);
+    }
+
+    public void OnApplicationQuit()
+    {
+        Application.Quit();
     }
 }

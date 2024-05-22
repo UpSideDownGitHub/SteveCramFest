@@ -50,13 +50,15 @@ public class Player : MonoBehaviour
     [Header("Quitting")]
     public string mainScene;
 
-    private float _movement;
+    [HideInInspector] public float _movement;
     private Collider2D _currentPlatform;
     private float _scale;
     [SerializeField] private bool _downPressed;
     [SerializeField] private bool _shootPressed;
 
     public bool freeze;
+
+    public ScreenShake screenShake;
 
 
     public void ShootPressed(InputAction.CallbackContext ctx)
@@ -117,6 +119,8 @@ public class Player : MonoBehaviour
         _scale = transform.localScale.x;
         currentHealth = maxHealth;
 
+        screenShake = Camera.main.gameObject.GetComponent<ScreenShake>();
+
         var playerInput = GetComponent<PlayerInput>();
         ui = GameObject.FindGameObjectWithTag("UI" + playerInput.user.index.ToString()).GetComponent<UI>();
         ui.SetScore(points);
@@ -131,7 +135,8 @@ public class Player : MonoBehaviour
         if (collision.gameObject.layer == 7 || collision.gameObject.CompareTag("Hazard"))
         {
             TakeDamage();
-            Destroy(collision.gameObject);
+            if (!collision.gameObject.CompareTag("Hazard"))
+                Destroy(collision.gameObject);
         }
     }
 
@@ -169,7 +174,7 @@ public class Player : MonoBehaviour
             {
                 parryList.Enqueue(collision.GetComponent<Pickup>().type);
                 ui.SetPowerups(parryList.ToArray());
-                Destroy(collision.gameObject);
+                collision.gameObject.GetComponent<Animator>().SetTrigger("Pick Up");
             }
         }
     }

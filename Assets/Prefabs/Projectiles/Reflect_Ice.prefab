@@ -9802,6 +9802,7 @@ GameObject:
   - component: {fileID: 4170815538355279758}
   - component: {fileID: 7892493452595979035}
   - component: {fileID: 6660985791800218660}
+  - component: {fileID: 2315883546366736867}
   m_Layer: 0
   m_Name: Reflect_Ice
   m_TagString: Untagged
@@ -9819,8 +9820,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.9846793, w: 0.17437543}
   m_LocalPosition: {x: -101.45, y: -14.13, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6969314152174797233}
   - {fileID: 4433620138046020564}
@@ -14684,3 +14685,16 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &2315883546366736867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3436080028300438407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ece64f2f96de8384fb4108b7fb816337, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyTime: 1
