@@ -1046,8 +1046,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63bb6d398831ce7468d93fe55e7dee5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalEnemies: 1
-  currentEnemies: 1
+  totalEnemies: 2
+  currentEnemies: 2
   levelDoor: {fileID: 1048024522304092450}
   spawnDoor: {fileID: 2881119805858901704}
 --- !u!1 &3550772136841112301

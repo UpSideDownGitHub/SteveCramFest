@@ -127,7 +127,7 @@ public class Player : MonoBehaviour
 
         parryEffect = GameObject.FindGameObjectWithTag("ParryDistort");
         parryEffectRenderer = GameObject.FindGameObjectWithTag("ParryDistort").GetComponent<SpriteRenderer>();
-
+        GameObject.FindGameObjectWithTag("Manager").GetComponent<Manager>().GetCurrentPlayers();
         var playerInput = GetComponent<PlayerInput>();
         ui = GameObject.FindGameObjectWithTag("UI" + playerInput.user.index.ToString()).GetComponent<UI>();
         ui.SetScore(points);
@@ -189,8 +189,12 @@ public class Player : MonoBehaviour
             }
             else
             {
+                print("Player Dead");
                 GameObject.FindGameObjectWithTag("Manager").GetComponent<Manager>().PlayerDied();
-                gameObject.SetActive(false);
+                GetComponent<SpriteRenderer>().enabled = false;
+                GetComponent<Collider2D>().enabled = false;
+                freeze = true;
+
             }
         }
     }
