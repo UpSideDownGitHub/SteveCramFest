@@ -15,6 +15,10 @@ public class Player : MonoBehaviour
     public UI ui;
     public bool singlePlayer;
 
+    [Header("Animations")]
+    public Animator anim1;
+    public Animator anim2;
+
     [Header("Jumping")]
     public float floorCheckDistance = 0.1f;
     public float jumpForce;
@@ -239,6 +243,8 @@ public class Player : MonoBehaviour
             return;
         if (_movement != 0)
         {
+            anim1.SetTrigger("Run");
+            anim2.SetTrigger("Run");
             if (_movement < 0)
                 transform.localScale = new Vector3(-_scale, transform.localScale.y, transform.localScale.z);
             else if (_movement > 0)
@@ -265,6 +271,8 @@ public class Player : MonoBehaviour
     {
         if (Time.time > _timeOfNextAttack)
         {
+            anim1.SetTrigger("Attack");
+            anim2.SetTrigger("Attack");
             _timeOfNextAttack = Time.time + attackTime;
             slashAnim.SetTrigger("Attack");
             sword.SetActive(true);
@@ -278,6 +286,9 @@ public class Player : MonoBehaviour
 
         if (Grounded || currentJumps > 0)
         {
+            anim1.SetTrigger("Jump");
+            anim2.SetTrigger("Jump");
+
             currentJumps--;
             rb.velocity = new Vector2(rb.velocity.x, 0);
             rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse); 
