@@ -224,7 +224,7 @@ MonoBehaviour:
   movementSpeed: 10000
   maxSpeed: 9
   platformLayer: 6
-  passthroughTime: 0.5
+  passthroughTime: 0.1
   sword: {fileID: 6714760833760140316}
   attackTime: 0.2
   slashAnim: {fileID: 8588058861045516083}
