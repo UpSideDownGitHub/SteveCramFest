@@ -18,7 +18,9 @@ public class Enemy : MonoBehaviour
     public bool canTakeDamage;
     public float dissolveTime;
     public SpriteRenderer enemySprite;
+    public Animator anim;
     private int _dissolveAmmount = Shader.PropertyToID("_DissolveAmmount");
+
 
     [Header("Navigation")]
     public bool flying;
@@ -251,7 +253,7 @@ public class Enemy : MonoBehaviour
         if (!canTakeDamage)
             return;
         curHealth = curHealth - damage < 0 ? 0 : curHealth - damage;
-
+        anim.SetTrigger("Hurt");
         if (curHealth == 0)
         {
             if (levelManager == null)

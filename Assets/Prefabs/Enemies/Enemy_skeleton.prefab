@@ -255,8 +255,9 @@ MonoBehaviour:
   maxHealth: 1
   curHealth: 1
   canTakeDamage: 1
-  dissolveTime: 0
-  enemySprite: {fileID: 0}
+  dissolveTime: 1
+  enemySprite: {fileID: 5696466367121714623}
+  anim: {fileID: 5899633250708647147}
   flying: 0
   player: {fileID: 0}
   enemyAnimator: {fileID: 2618063065977976024}
@@ -475,6 +476,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1509882517825823392, guid: 30d1328070161284f9d5c079660dcd3b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 18221fe7fd39f0d4c83a4d1ca834b09a, type: 2}
     - target: {fileID: 2457490673122381204, guid: 30d1328070161284f9d5c079660dcd3b, type: 3}
       propertyPath: m_Name
       value: SkeletonRunAnim
@@ -502,6 +507,11 @@ Animator:
 --- !u!4 &5229036790055684466 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1398511296128517741, guid: 30d1328070161284f9d5c079660dcd3b, type: 3}
+  m_PrefabInstance: {fileID: 6627548077457362719}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &5696466367121714623 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1509882517825823392, guid: 30d1328070161284f9d5c079660dcd3b, type: 3}
   m_PrefabInstance: {fileID: 6627548077457362719}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &8782869623392486027 stripped

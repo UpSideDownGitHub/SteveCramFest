@@ -107,8 +107,9 @@ MonoBehaviour:
   maxHealth: 3
   curHealth: 3
   canTakeDamage: 1
-  dissolveTime: 0
-  enemySprite: {fileID: 0}
+  dissolveTime: 1
+  enemySprite: {fileID: 5283266746992767309}
+  anim: {fileID: 4250003361656764716}
   flying: 1
   player: {fileID: 0}
   enemyAnimator: {fileID: 0}
@@ -270,7 +271,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 18221fe7fd39f0d4c83a4d1ca834b09a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
