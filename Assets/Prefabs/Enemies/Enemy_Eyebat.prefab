@@ -308,6 +308,7 @@ MonoBehaviour:
   canTakeDamage: 1
   dissolveTime: 1
   enemySprite: {fileID: 6971318021657730279}
+  anim: {fileID: 3501400031607420042}
   flying: 1
   player: {fileID: 0}
   enemyAnimator: {fileID: 0}
