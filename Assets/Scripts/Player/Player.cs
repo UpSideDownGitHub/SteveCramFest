@@ -62,6 +62,7 @@ public class Player : MonoBehaviour
     public AudioSource jump;
     public AudioSource attack;
     public AudioSource hit;
+    public AudioSource swish;
 
     [Header("End Screen")]
     public GameObject endScreen;
@@ -208,7 +209,6 @@ public class Player : MonoBehaviour
                 PlayerPrefs.SetInt("ScoreP1", points);
                 PlayerPrefs.SetInt("Multiplayer", 0);
                 endScreen.SetActive(true);
-                SceneManager.LoadScene("Results");
             }
             else
             {
@@ -217,7 +217,6 @@ public class Player : MonoBehaviour
                 GetComponent<SpriteRenderer>().enabled = false;
                 GetComponent<Collider2D>().enabled = false;
                 freeze = true;
-
             }
         }
     }
@@ -290,6 +289,7 @@ public class Player : MonoBehaviour
     {
         if (Time.time > _timeOfNextAttack)
         {
+            swish.Play();
             anim1.SetTrigger("Attack");
             anim2.SetTrigger("Attack");
             _timeOfNextAttack = Time.time + attackTime;

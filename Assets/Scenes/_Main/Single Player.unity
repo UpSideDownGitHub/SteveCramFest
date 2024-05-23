@@ -507,6 +507,7 @@ MonoBehaviour:
   currentLevel: {fileID: 917433947}
   Fade: {fileID: 2000005106}
   changingLevel: 0
+  endScreen: {fileID: 0}
   players:
   - {fileID: 1503564285}
   currentPlayersDead: 0
@@ -603,11 +604,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 51055944699638555, guid: 8f8e2d86627d80f4888c4d6036ecea48, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2038210180787318739, guid: 8f8e2d86627d80f4888c4d6036ecea48, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3459999149130427981, guid: 8f8e2d86627d80f4888c4d6036ecea48, type: 3}
       propertyPath: m_Name
@@ -872,6 +873,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6292859367238521746, guid: 1673786bd269ffb4d86ac19cc7953d2d, type: 3}
+      propertyPath: endScreen
+      value: 
+      objectReference: {fileID: 6163514469098210983}
     - target: {fileID: 6292859367238521746, guid: 1673786bd269ffb4d86ac19cc7953d2d, type: 3}
       propertyPath: singlePlayer
       value: 1
@@ -1175,6 +1180,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1300063202169499493, guid: ce9434cadd19bb8429609de4f5a51a05, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4333196903780343628, guid: ce9434cadd19bb8429609de4f5a51a05, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1255,10 +1264,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5133454776389875397, guid: ce9434cadd19bb8429609de4f5a51a05, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7427639797012211076, guid: ce9434cadd19bb8429609de4f5a51a05, type: 3}
       propertyPath: m_Name
       value: HUD Canvas
@@ -1268,6 +1273,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce9434cadd19bb8429609de4f5a51a05, type: 3}
+--- !u!1 &6163514469098210983 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1300063202169499493, guid: ce9434cadd19bb8429609de4f5a51a05, type: 3}
+  m_PrefabInstance: {fileID: 6163514469098210982}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1839735485 &6368517255422794518
 Tilemap:
   m_ObjectHideFlags: 0

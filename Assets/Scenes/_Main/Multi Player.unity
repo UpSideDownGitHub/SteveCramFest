@@ -7440,6 +7440,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce9434cadd19bb8429609de4f5a51a05, type: 3}
+--- !u!1 &557933895 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1300063202169499493, guid: ce9434cadd19bb8429609de4f5a51a05, type: 3}
+  m_PrefabInstance: {fileID: 557933894}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &565311604
 GameObject:
   m_ObjectHideFlags: 0
@@ -7570,6 +7575,7 @@ MonoBehaviour:
   currentLevel: {fileID: 246055160}
   Fade: {fileID: 2000005106}
   changingLevel: 0
+  endScreen: {fileID: 557933895}
   players: []
   currentPlayersDead: 0
 --- !u!1 &874946999

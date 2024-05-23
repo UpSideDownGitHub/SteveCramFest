@@ -12,6 +12,8 @@ public class Manager : MonoBehaviour
     public GameObject Fade;
     public bool changingLevel;
 
+    public GameObject endScreen;
+
     [Header("Player")]
     public GameObject[] players;
     public int currentPlayersDead;
@@ -29,7 +31,7 @@ public class Manager : MonoBehaviour
             PlayerPrefs.SetInt("ScoreP1", players[0].GetComponent<Player>().points);
             PlayerPrefs.SetInt("ScoreP2", players[1].GetComponent<Player>().points);
             PlayerPrefs.SetInt("Multiplayer", 1);
-            SceneManager.LoadScene("Results");
+            endScreen.SetActive(true);
         }
     }
 
@@ -55,6 +57,7 @@ public class Manager : MonoBehaviour
             player.GetComponent<Player>().freeze = false;
             if (player.GetComponent<Player>().currentHealth == 0)
             {
+                currentPlayersDead--;
                 player.GetComponent<SpriteRenderer>().enabled = true;
                 player.GetComponent<Collider2D>().enabled = true;
                 player.GetComponent<Player>().freeze = false;
