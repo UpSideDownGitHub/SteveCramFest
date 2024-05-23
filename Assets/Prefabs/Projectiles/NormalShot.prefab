@@ -5006,12 +5006,17 @@ MonoBehaviour:
   damage: 1
   type: 0
   shooter: {fileID: 0}
+  normalEffect: {fileID: 6021152621424006603, guid: 5a2f6fc448e5de64597c03438a6ed891, type: 3}
+  fireEffect: {fileID: 0}
+  iceEffect: {fileID: 0}
+  explosionRange: 0
   target: {fileID: 0}
   agent: {fileID: 0}
   maxHits: 0
   curHits: 0
   rb: {fileID: 0}
   movementSpeed: 0
+  visited: []
 --- !u!114 &4129248899710622663
 MonoBehaviour:
   m_ObjectHideFlags: 0

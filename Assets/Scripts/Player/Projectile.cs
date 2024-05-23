@@ -21,6 +21,13 @@ public class Projectile : MonoBehaviour
     public BulletType type;
     public GameObject shooter;
 
+    [Header("Normal")]
+    public GameObject normalEffect;
+
+    [Header("Fire & Ice")]
+    public GameObject fireEffect;
+    public GameObject iceEffect;
+    public float explosionRange;
     
     [Header("Seeker & Lightning")]
     public GameObject target;
@@ -131,8 +138,43 @@ public class Projectile : MonoBehaviour
             if (collision.gameObject.CompareTag("Enemy"))
             {
                 collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
+
+                if (type == BulletType.FIREBALL)
+                {
+                    Instantiate(fireEffect, transform.position, Quaternion.identity);
+                    var enemies = GetEnemyWithinRange(explosionRange);
+                    foreach (var enemy in enemies)
+                    {
+                        enemy.GetComponent<Enemy>().TakeDamage(damage);
+                    }
+                }
+                else if (type == BulletType.ICESPIKE)
+                {
+                    Instantiate(iceEffect, transform.position, Quaternion.identity);
+                    var enemies = GetEnemyWithinRange(explosionRange);
+                    foreach (var enemy in enemies)
+                    {
+                        enemy.GetComponent<Enemy>().TakeDamage(damage);
+                    }
+                }
+                else if (type == BulletType.NORMALSHOT)
+                {
+                    Instantiate(normalEffect, transform.position, Quaternion.identity);
+                }
                 Destroy(gameObject);
             }
         }
+    }
+
+    public List<GameObject> GetEnemyWithinRange(float range)
+    {
+        var enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        List<GameObject> enemyList = new();
+        foreach (var enemy in enemies)
+        {
+            if (Vector2.Distance(enemy.transform.position, transform.position) < range)
+                enemyList.Add(enemy);
+        }
+        return enemyList;
     }
 }

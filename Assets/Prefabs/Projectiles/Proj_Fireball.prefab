@@ -129,12 +129,16 @@ MonoBehaviour:
   damage: 1
   type: 1
   shooter: {fileID: 0}
+  fireEffect: {fileID: 3135923663933494516, guid: c7b78903d77aaba42b0017b209d449e6, type: 3}
+  iceEffect: {fileID: 0}
+  explosionRange: 7.5
   target: {fileID: 0}
   agent: {fileID: 0}
   maxHits: 0
   curHits: 0
   rb: {fileID: 0}
   movementSpeed: 0
+  visited: []
 --- !u!58 &780972426498521911
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -144,7 +148,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 3379199297584793154}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: fcfa1925800a21c45be40ecbbcfe67b6, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -186,7 +190,7 @@ Rigidbody2D:
   m_LinearDrag: 0.1
   m_AngularDrag: 0.1
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: fcfa1925800a21c45be40ecbbcfe67b6, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -438,7 +442,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -936,7 +940,7 @@ ParticleSystem:
         m_RotationOrder: 4
     randomizeRotationDirection: 0
     gravitySource: 1
-    maxNumParticles: 60
+    maxNumParticles: 1000
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0
@@ -1202,7 +1206,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 100
+      scalar: 0
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -5266,7 +5270,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -5764,7 +5768,7 @@ ParticleSystem:
         m_RotationOrder: 4
     randomizeRotationDirection: 0
     gravitySource: 1
-    maxNumParticles: 20
+    maxNumParticles: 1000
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0
@@ -6030,7 +6034,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 0
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -6083,7 +6087,7 @@ ParticleSystem:
     rateOverDistance:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 10
       minScalar: 0
       maxCurve:
         serializedVersion: 2
