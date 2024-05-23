@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 42113213416064891}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.58, y: 6.619999, z: -5.0320225}
+  m_LocalPosition: {x: 11.450003, y: -3.8500004, z: -5.0320225}
   m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -384,7 +384,7 @@ Transform:
   m_GameObject: {fileID: 839419509069713172}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.53, y: 0.018699646, z: -5.0320225}
+  m_LocalPosition: {x: 11.22, y: 10.57, z: -5.0320225}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -553,7 +553,7 @@ Transform:
   m_GameObject: {fileID: 1390314850791239368}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -76.91, y: 3.8099976, z: 0}
+  m_LocalPosition: {x: -67.04, y: -6.6600018, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -905,7 +905,7 @@ Transform:
   m_GameObject: {fileID: 3383420561095991669}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -75.17, y: 3.8099976, z: 0}
+  m_LocalPosition: {x: -65.299995, y: -6.6600018, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1326,8 +1326,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 4.437949, y: -1.72155, z: 0}
-    m_Extent: {x: 28.318748, y: 9.39215, z: 0}
+    m_Center: {x: 4.4371996, y: -1.7256, z: 0}
+    m_Extent: {x: 28.319801, y: 9.3852, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -2286,7 +2286,7 @@ Transform:
   m_GameObject: {fileID: 5474797791623382478}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.14, y: 9.33, z: -5.0320225}
+  m_LocalPosition: {x: 16.010002, y: -1.1399994, z: -5.0320225}
   m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2370,7 +2370,7 @@ Transform:
   m_GameObject: {fileID: 5606310088496860110}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -79.520004, y: 3.1499977, z: 0}
+  m_LocalPosition: {x: -69.65, y: -7.3200016, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -2623,7 +2623,7 @@ Transform:
   m_GameObject: {fileID: 5923092422913706235}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.18, y: 7.119999, z: -5.0320225}
+  m_LocalPosition: {x: 14.05, y: -3.35, z: -5.0320225}
   m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -3189,8 +3189,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 3.6052513, y: -1.8874998, z: 0}
-    m_Extent: {x: 41.13575, y: 20.4906, z: 0}
+    m_Center: {x: 3.6087494, y: -1.8902493, z: 0}
+    m_Extent: {x: 41.14045, y: 20.49395, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -3432,7 +3432,7 @@ MonoBehaviour:
   m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
   m_HideEditorLogs: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 78ba97ff2adc9a74a9fc03ecf0ebb265, type: 2}
 --- !u!114 &5277428139331379436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7044,7 +7044,7 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 7039
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
@@ -8591,7 +8591,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6411296612558720656, guid: 5cea3898feb7c5e4d802ee5d0aa0ae01, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.25
+      value: 16.25
       objectReference: {fileID: 0}
     - target: {fileID: 6411296612558720656, guid: 5cea3898feb7c5e4d802ee5d0aa0ae01, type: 3}
       propertyPath: m_LocalPosition.z
