@@ -63,6 +63,9 @@ public class Player : MonoBehaviour
     public AudioSource attack;
     public AudioSource hit;
 
+    [Header("End Screen")]
+    public GameObject endScreen;
+
     [HideInInspector] public float _movement;
     private Collider2D _currentPlatform;
     private float _scale;
@@ -204,6 +207,7 @@ public class Player : MonoBehaviour
             {
                 PlayerPrefs.SetInt("ScoreP1", points);
                 PlayerPrefs.SetInt("Multiplayer", 0);
+                endScreen.SetActive(true);
                 SceneManager.LoadScene("Results");
             }
             else
