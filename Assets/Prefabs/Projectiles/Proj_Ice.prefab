@@ -4854,7 +4854,7 @@ GameObject:
   - component: {fileID: 4240698199373144835}
   m_Layer: 10
   m_Name: Proj_Ice
-  m_TagString: Untagged
+  m_TagString: Proj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5027,6 +5027,7 @@ MonoBehaviour:
   damage: 1
   type: 4
   shooter: {fileID: 0}
+  normalEffect: {fileID: 0}
   fireEffect: {fileID: 0}
   iceEffect: {fileID: 1703526964287915331, guid: e3a383d5d9e46c047bc259933ad33d8e, type: 3}
   explosionRange: 7.5

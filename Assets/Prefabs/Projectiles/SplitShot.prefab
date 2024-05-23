@@ -4855,7 +4855,7 @@ GameObject:
   - component: {fileID: 3594725724191950026}
   m_Layer: 10
   m_Name: SplitShot
-  m_TagString: Untagged
+  m_TagString: Proj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5028,12 +5028,17 @@ MonoBehaviour:
   damage: 0.1
   type: 5
   shooter: {fileID: 0}
+  normalEffect: {fileID: 0}
+  fireEffect: {fileID: 0}
+  iceEffect: {fileID: 0}
+  explosionRange: 0
   target: {fileID: 0}
   agent: {fileID: 0}
   maxHits: 0
   curHits: 0
   rb: {fileID: 0}
   movementSpeed: 0
+  visited: []
 --- !u!114 &3594725724191950026
 MonoBehaviour:
   m_ObjectHideFlags: 0

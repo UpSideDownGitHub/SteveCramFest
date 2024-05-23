@@ -33,6 +33,7 @@ public class Player : MonoBehaviour
     public GameObject sword;
     public float attackTime;
     public Queue<BulletType> parryList = new();
+    public Animator slashAnim;
     private float _timeOfNextAttack;
 
     [Header("Health")]
@@ -232,6 +233,7 @@ public class Player : MonoBehaviour
         if (Time.time > _timeOfNextAttack)
         {
             _timeOfNextAttack = Time.time + attackTime;
+            slashAnim.SetTrigger("Attack");
             sword.SetActive(true);
         }
     }

@@ -52,6 +52,17 @@ public class Manager : MonoBehaviour
             player.GetComponent<Player>().freeze = true;
             player.transform.position = spawnPosition;
         }
+        var projectiles = GameObject.FindGameObjectsWithTag("Proj");
+        for (int i = 0; i < projectiles.Length; i++)
+        {
+            Destroy(projectiles[i]);
+        }
+        var pickups = GameObject.FindGameObjectsWithTag("Pickup");
+        for (int i = 0; i < pickups.Length; i++)
+        {
+            Destroy(pickups[i]);
+        }
+
         yield return new WaitForSeconds(0.5f);
         foreach (var player in players)
         {

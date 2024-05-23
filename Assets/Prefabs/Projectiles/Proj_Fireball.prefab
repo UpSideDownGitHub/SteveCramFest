@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 7034543908571930036}
   m_Layer: 10
   m_Name: Proj_Fireball
-  m_TagString: Untagged
+  m_TagString: Proj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,6 +129,7 @@ MonoBehaviour:
   damage: 1
   type: 1
   shooter: {fileID: 0}
+  normalEffect: {fileID: 0}
   fireEffect: {fileID: 3135923663933494516, guid: c7b78903d77aaba42b0017b209d449e6, type: 3}
   iceEffect: {fileID: 0}
   explosionRange: 7.5
