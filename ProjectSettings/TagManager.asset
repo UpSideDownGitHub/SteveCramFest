@@ -12,6 +12,8 @@ TagManager:
   - Hazard
   - UI0
   - UI1
+  - Proj
+  - ParryDistort
   layers:
   - Default
   - TransparentFX

@@ -7693,7 +7693,7 @@ MonoBehaviour:
   m_Intensity: 2.38
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: f177335300000000
+  m_ApplyToSortingLayers: f1773353000000007b2a4025
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 1
@@ -7707,8 +7707,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 4.434101, y: -1.7330999, z: 0}
-    m_Extent: {x: 41.2971, y: 22.362598, z: 0}
+    m_Center: {x: 4.43635, y: -1.7316504, z: 0}
+    m_Extent: {x: 41.28665, y: 22.361351, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -7775,7 +7775,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: f177335300000000
+  m_ApplyToSortingLayers: f1773353000000007b2a4025
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 1
@@ -7857,7 +7857,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: f177335300000000
+  m_ApplyToSortingLayers: f1773353000000007b2a4025
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 1
@@ -7984,7 +7984,7 @@ MonoBehaviour:
   m_Intensity: 2.38
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: f177335300000000
+  m_ApplyToSortingLayers: f1773353000000007b2a4025
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 1
@@ -7998,8 +7998,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 3.6160498, y: -1.8838501, z: 0}
-    m_Extent: {x: 26.828049, y: 6.19065, z: 0}
+    m_Center: {x: 3.6108503, y: -1.87515, z: 0}
+    m_Extent: {x: 26.826649, y: 6.1832504, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0

@@ -38,6 +38,11 @@ public class PlayerAttack : MonoBehaviour
         else if (collision.gameObject.layer == bulletLayer)
         {
             player.screenShake.TriggerShake();
+            player.slashAnim.SetTrigger("Parry");
+
+            // PARRY 
+            player.parryEffect.transform.position = transform.position;
+            player.callVanish();
 
             // reflect the bullet
             var bulletRB = collision.GetComponent<Rigidbody2D>();

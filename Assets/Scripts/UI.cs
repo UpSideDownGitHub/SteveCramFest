@@ -22,6 +22,8 @@ public class UI : MonoBehaviour
 
     public void SetHearts(int health)
     {
+        if (health == 5)
+            return;
         Hearts[health].SetTrigger("Lose Health");
         //for (int i = 0; i < Hearts.Length; i++)
         //{

@@ -3055,7 +3055,7 @@ MonoBehaviour:
   m_Intensity: 2.38
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: f177335300000000
+  m_ApplyToSortingLayers: f1773353000000007b2a4025
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 1
@@ -3069,8 +3069,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 5.37035, y: -0.59325004, z: 0}
-    m_Extent: {x: 22.20285, y: 6.02225, z: 0}
+    m_Center: {x: 5.3757, y: -0.60395, z: 0}
+    m_Extent: {x: 22.2078, y: 6.02325, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -4222,7 +4222,7 @@ MonoBehaviour:
   m_Intensity: 2.38
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: f177335300000000
+  m_ApplyToSortingLayers: f1773353000000007b2a4025
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 1
@@ -4236,8 +4236,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 5.3658, y: -0.5985501, z: 0}
-    m_Extent: {x: 22.2089, y: 6.02295, z: 0}
+    m_Center: {x: 5.3744497, y: -0.60305, z: 0}
+    m_Extent: {x: 22.21405, y: 6.0223503, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0

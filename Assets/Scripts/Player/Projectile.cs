@@ -115,17 +115,24 @@ public class Projectile : MonoBehaviour
                 break;
             case BulletType.LIGHTNING:
                 // shoot to a enemy then more and more
-                if (Vector3.Distance(transform.position, target.transform.position) < 1f)
+                try
                 {
-                    target.GetComponent<Enemy>().TakeDamage(damage);
-                    target = FindClosestEnemy(target);
-                    if (target == null)
-                        Destroy(gameObject);
-                    var dir = target.transform.position - transform.position;
-                    rb.velocity = Vector2.zero;
-                    float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-                    transform.rotation = Quaternion.Euler(0, 0, angle);
-                    rb.AddForce(transform.right * movementSpeed);
+                    if (Vector3.Distance(transform.position, target.transform.position) < 1f)
+                    {
+                        target.GetComponent<Enemy>().TakeDamage(damage);
+                        target = FindClosestEnemy(target);
+                        if (target == null)
+                            Destroy(gameObject);
+                        var dir = target.transform.position - transform.position;
+                        rb.velocity = Vector2.zero;
+                        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+                        transform.rotation = Quaternion.Euler(0, 0, angle);
+                        rb.AddForce(transform.right * movementSpeed);
+                    }
+                }
+                catch
+                {
+                    Destroy(gameObject);
                 }
                 break;
         }

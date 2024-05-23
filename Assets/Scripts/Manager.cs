@@ -16,6 +16,11 @@ public class Manager : MonoBehaviour
     public GameObject[] players;
     public int currentPlayersDead;
 
+    public void GetCurrentPlayers()
+    {
+        players = GameObject.FindGameObjectsWithTag("Player");
+    }
+
     public void PlayerDied()
     {
         currentPlayersDead++;
@@ -45,6 +50,18 @@ public class Manager : MonoBehaviour
 
         currentLevel = Instantiate(levels.levels[Random.Range(0, levels.levels.Length)]);
 
+        foreach (var player in players)
+        {
+            player.GetComponent<Player>().freeze = false;
+            if (player.GetComponent<Player>().currentHealth == 0)
+            {
+                player.GetComponent<SpriteRenderer>().enabled = true;
+                player.GetComponent<Collider2D>().enabled = true;
+                player.GetComponent<Player>().freeze = false;
+                player.GetComponent<Player>().currentHealth++;
+                player.GetComponent<Player>().ui.Hearts[0].SetTrigger("Gain Health");
+            }
+        }
         var spawnPosition = currentLevel.GetComponent<LevelManager>().spawnDoor.transform.position;
         foreach (var player in players)
         {
@@ -52,19 +69,30 @@ public class Manager : MonoBehaviour
             player.GetComponent<Player>().freeze = true;
             player.transform.position = spawnPosition;
         }
-        yield return new WaitForSeconds(0.5f);
+        var projectiles = GameObject.FindGameObjectsWithTag("Proj");
+        for (int i = 0; i < projectiles.Length; i++)
+        {
+            Destroy(projectiles[i]);
+        }
+        var pickups = GameObject.FindGameObjectsWithTag("Pickup");
+        for (int i = 0; i < pickups.Length; i++)
+        {
+            Destroy(pickups[i]);
+        }
         foreach (var player in players)
         {
-            player.GetComponent<Player>().freeze = false;
-            if (player.GetComponent<Player>().currentHealth == 0)
-            {
-                player.SetActive(true);
-                player.GetComponent<Player>().currentHealth++;
-            }
+            player.GetComponent<Player>().invinsable = true;
         }
+        yield return new WaitForSeconds(0.5f);
+
         Fade.SetActive(false);
         changingLevel = false;
         currentLevel.GetComponent<LevelManager>().spawnDoor.GetComponent<Animator>().SetTrigger("Open");
         currentLevel.GetComponent<LevelManager>().spawnDoor.GetComponent<Animator>().SetTrigger("Close");
+        foreach (var player in players)
+        {
+            player.GetComponent<Player>().GiveIFrames();
+            player.GetComponent<Player>().freeze = false;
+        }
     }
 }

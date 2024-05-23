@@ -4855,7 +4855,7 @@ GameObject:
   - component: {fileID: -9014475392419129425}
   m_Layer: 7
   m_Name: EnemyProj_S
-  m_TagString: Untagged
+  m_TagString: Proj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4917,7 +4917,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_Sprite: {fileID: 21300000, guid: 337d5d0a7964648449ea718bbcffcc1e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5028,12 +5028,17 @@ MonoBehaviour:
   damage: 1
   type: 0
   shooter: {fileID: 0}
+  normalEffect: {fileID: 0}
+  fireEffect: {fileID: 0}
+  iceEffect: {fileID: 0}
+  explosionRange: 0
   target: {fileID: 0}
   agent: {fileID: 0}
   maxHits: 0
   curHits: 0
   rb: {fileID: 0}
   movementSpeed: 0
+  visited: []
 --- !u!114 &-9014475392419129425
 MonoBehaviour:
   m_ObjectHideFlags: 0

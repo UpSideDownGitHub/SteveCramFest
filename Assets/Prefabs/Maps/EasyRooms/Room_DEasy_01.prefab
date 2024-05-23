@@ -466,7 +466,7 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 6911
+    m_Bits: 7039
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
@@ -3283,7 +3283,7 @@ MonoBehaviour:
   m_Intensity: 2.38
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: f177335300000000
+  m_ApplyToSortingLayers: f1773353000000007b2a4025
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 1
@@ -3297,8 +3297,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 3.6174498, y: -1.8860497, z: 0}
-    m_Extent: {x: 26.821949, y: 6.18885, z: 0}
+    m_Center: {x: 3.61895, y: -1.88065, z: 0}
+    m_Extent: {x: 26.82555, y: 6.18695, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -3494,7 +3494,7 @@ MonoBehaviour:
   m_Intensity: 2.38
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: f177335300000000
+  m_ApplyToSortingLayers: f1773353000000007b2a4025
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 1
@@ -3508,8 +3508,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 4.4358006, y: -1.7217999, z: 0}
-    m_Extent: {x: 41.285797, y: 22.3615, z: 0}
+    m_Center: {x: 4.436451, y: -1.7253494, z: 0}
+    m_Extent: {x: 41.30125, y: 22.36735, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -7186,7 +7186,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: f177335300000000
+  m_ApplyToSortingLayers: f1773353000000007b2a4025
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 1

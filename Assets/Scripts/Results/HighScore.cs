@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class HighScore : MonoBehaviour
@@ -17,6 +18,8 @@ public class HighScore : MonoBehaviour
 
     public GameObject highscoreAchived;
     public GameObject yousuck;
+
+    public GameObject youSuckButtonLikeReallyYouSuck;
 
     private int _currentScore;
     private string _currentName;
@@ -66,6 +69,7 @@ public class HighScore : MonoBehaviour
         }
         highscoreAchived.SetActive(false);
         yousuck.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(youSuckButtonLikeReallyYouSuck);
         looser = true;
     }
 

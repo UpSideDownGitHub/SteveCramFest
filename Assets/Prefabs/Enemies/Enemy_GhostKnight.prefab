@@ -588,11 +588,9 @@ MonoBehaviour:
   inRange: 0
   playerSearchTime: 0
   powerups:
-  - {fileID: 4268323852765727109, guid: 565f51057b9b52a489632af1dc626a91, type: 3}
   - {fileID: 4268323852765727109, guid: e6756c4f33c4c704682527c26e41bd7d, type: 3}
   - {fileID: 4268323852765727109, guid: b67a51f1a67f6734ba717748c5e0ac94, type: 3}
   - {fileID: 4268323852765727109, guid: 2216e473d6eb9c3498566bf0e4bb4599, type: 3}
-  - {fileID: 4268323852765727109, guid: e2f8ecf6f284dd241971add349f8c455, type: 3}
   - {fileID: 4268323852765727109, guid: ce63c2a9dbb3c0b4baac7355b328f423, type: 3}
 --- !u!50 &6926704948354230356
 Rigidbody2D:
