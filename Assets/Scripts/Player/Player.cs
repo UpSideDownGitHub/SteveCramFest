@@ -214,7 +214,6 @@ public class Player : MonoBehaviour
             {
                 print("Player Dead");
                 GameObject.FindGameObjectWithTag("Manager").GetComponent<Manager>().PlayerDied();
-                GetComponent<SpriteRenderer>().enabled = false;
                 GetComponent<Collider2D>().enabled = false;
                 freeze = true;
             }

@@ -11,7 +11,11 @@ public class PlaySound : MonoBehaviour
     }
     public void AudioPlay()
     {
-        audioSource.Play();
+        try
+        {
+            audioSource.Play();
+        }
+        catch { }
     }
 
 }

@@ -58,7 +58,6 @@ public class Manager : MonoBehaviour
             if (player.GetComponent<Player>().currentHealth == 0)
             {
                 currentPlayersDead--;
-                player.GetComponent<SpriteRenderer>().enabled = true;
                 player.GetComponent<Collider2D>().enabled = true;
                 player.GetComponent<Player>().freeze = false;
                 player.GetComponent<Player>().currentHealth++;

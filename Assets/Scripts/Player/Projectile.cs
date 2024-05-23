@@ -97,7 +97,8 @@ public class Projectile : MonoBehaviour
                 closestEnemy = enemy;
             }
         }
-        visited.Add(closestEnemy.name);
+        if (closestEnemy)
+            visited.Add(closestEnemy.name);
         return closestEnemy;
     }
 

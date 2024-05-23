@@ -5,6 +5,7 @@ using System.Threading;
 using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Networking;
 using UnityEngine.UIElements;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 using Transform = UnityEngine.Transform;
@@ -185,7 +186,11 @@ public class Enemy : MonoBehaviour
         {
             if (Time.time > _timeOfNextFire && shoots)
             {
-                attack.Play();
+                try
+                {
+                    attack.Play();
+                }
+                catch { }
                 var dir = player.transform.position - firePoint.transform.position;
                 dir.Normalize();
                 RaycastHit2D[] hits = Physics2D.RaycastAll(firePoint.transform.position, dir);
@@ -209,7 +214,11 @@ public class Enemy : MonoBehaviour
     {
         if (moveSpeed == 0)
             return;
-        attack.Play();
+        try
+        {
+            attack.Play();
+        }
+        catch { }
         enemyAnimator.SetTrigger("Attack");
         moveSpeed = 0;
         StartCoroutine(StartRun());
@@ -266,7 +275,11 @@ public class Enemy : MonoBehaviour
                 levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
 
             Instantiate(powerups[Random.Range(0, powerups.Length)], transform.position, Quaternion.identity);
-
+            try
+            {
+                weaponTrigger.SetActive(false);
+            }
+            catch { }
             levelManager.EnemyKilled();
             StartCoroutine(Vanish());
         }
