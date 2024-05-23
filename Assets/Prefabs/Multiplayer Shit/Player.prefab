@@ -145,7 +145,7 @@ MonoBehaviour:
   platformLayer: 6
   passthroughTime: 0.2
   sword: {fileID: 6714760833760140316}
-  attackTime: 0.2
+  attackTime: 0.15
   slashAnim: {fileID: 8588058861045516083}
   parryEffect: {fileID: 0}
   parryEffectRenderer: {fileID: 0}
@@ -476,12 +476,14 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -1.609393, y: 0.58229774}
-      - {x: -0.50833327, y: 0.4318074}
-      - {x: -0.50051874, y: -0.44198224}
-      - {x: -1.6222081, y: -0.8612566}
-      - {x: 0.93508255, y: -1.5238862}
-      - {x: 0.8296271, y: 1.6713963}
+    - - {x: -2.1170027, y: 2.495128}
+      - {x: -1.6178687, y: 1.5838447}
+      - {x: -0.63541543, y: 1.3341014}
+      - {x: -0.50051874, y: -0.36979893}
+      - {x: -1.6052626, y: -0.45522442}
+      - {x: -1.9121606, y: -1.3892853}
+      - {x: 1.2654984, y: -1.6141158}
+      - {x: 1.3226053, y: 2.7003374}
   m_UseDelaunayMesh: 0
 --- !u!1001 &810811866824895906
 PrefabInstance:

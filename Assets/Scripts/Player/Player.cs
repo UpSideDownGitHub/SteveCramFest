@@ -134,6 +134,16 @@ public class Player : MonoBehaviour
         GameObject.FindGameObjectWithTag("Manager").GetComponent<Manager>().GetCurrentPlayers();
         var playerInput = GetComponent<PlayerInput>();
         ui = GameObject.FindGameObjectWithTag("UI" + playerInput.user.index.ToString()).GetComponent<UI>();
+        if (playerInput.user.index == 0)
+        {
+            anim1.gameObject.SetActive(true);
+            anim2.gameObject.SetActive(false);
+        }
+        else
+        {
+            anim1.gameObject.SetActive(false);
+            anim2.gameObject.SetActive(true);
+        }
         ui.SetScore(points);
         ui.SetPowerups(parryList.ToArray());
         ui.SetHearts(currentHealth);

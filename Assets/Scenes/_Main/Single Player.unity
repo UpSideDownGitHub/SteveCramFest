@@ -1119,29 +1119,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4921599355465471333, guid: ce9434cadd19bb8429609de4f5a51a05, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5133454776389875397, guid: ce9434cadd19bb8429609de4f5a51a05, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7065004649832012923, guid: ce9434cadd19bb8429609de4f5a51a05, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7427639797012211076, guid: ce9434cadd19bb8429609de4f5a51a05, type: 3}
       propertyPath: m_Name
       value: HUD Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 8418276057705473951, guid: ce9434cadd19bb8429609de4f5a51a05, type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8801538024832936924, guid: ce9434cadd19bb8429609de4f5a51a05, type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
