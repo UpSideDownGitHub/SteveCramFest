@@ -318,6 +318,7 @@ GameObject:
   - component: {fileID: 3336486893574580736}
   - component: {fileID: 6866010719802193555}
   - component: {fileID: 3276722863171370233}
+  - component: {fileID: 2954081451330870605}
   m_Layer: 9
   m_Name: Enemy_EyeMonster
   m_TagString: Enemy
@@ -507,3 +508,24 @@ CapsuleCollider2D:
   m_Offset: {x: -0.5074501, y: -0.2120111}
   m_Size: {x: 1.4430923, y: 2.6048932}
   m_Direction: 0
+--- !u!95 &2954081451330870605
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7992975743484476908}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5221b6b1d60693148a5ecbf07993195d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

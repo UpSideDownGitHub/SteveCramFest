@@ -234,6 +234,7 @@ GameObject:
   - component: {fileID: 5381874566262567711}
   - component: {fileID: 5828555433620388341}
   - component: {fileID: 1069351544493043200}
+  - component: {fileID: 1840860020694267298}
   m_Layer: 9
   m_Name: Enemy_Crow
   m_TagString: Enemy
@@ -416,3 +417,24 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.032191277}
   m_Size: {x: 0.7907562, y: 0.93561745}
   m_Direction: 0
+--- !u!95 &1840860020694267298
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7148192688491689199}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 26e031e7440781846bfec11d8c03796c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
