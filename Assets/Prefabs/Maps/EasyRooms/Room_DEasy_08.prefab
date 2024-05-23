@@ -4613,7 +4613,7 @@ MonoBehaviour:
   m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
   m_HideEditorLogs: 0
-  m_NavMeshData: {fileID: 23800000, guid: 02245c983af33394091fedd0859777a4, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: d24b3f9df66540a4bb08c4453ffde9ac, type: 2}
 --- !u!114 &6554633372680752435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8090,19 +8090,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 179543234284929645, guid: 0000d909723245f449b21056d7eddbee, type: 3}
       propertyPath: m_LocalBounds.m_Center.x
-      value: 5.3694
+      value: 5.3744497
       objectReference: {fileID: 0}
     - target: {fileID: 179543234284929645, guid: 0000d909723245f449b21056d7eddbee, type: 3}
       propertyPath: m_LocalBounds.m_Center.y
-      value: -0.5919001
+      value: -0.59739995
       objectReference: {fileID: 0}
     - target: {fileID: 179543234284929645, guid: 0000d909723245f449b21056d7eddbee, type: 3}
       propertyPath: m_LocalBounds.m_Extent.x
-      value: 22.2146
+      value: 22.213348
       objectReference: {fileID: 0}
     - target: {fileID: 179543234284929645, guid: 0000d909723245f449b21056d7eddbee, type: 3}
       propertyPath: m_LocalBounds.m_Extent.y
-      value: 6.0206003
+      value: 6.0126
       objectReference: {fileID: 0}
     - target: {fileID: 2372955879290002624, guid: 0000d909723245f449b21056d7eddbee, type: 3}
       propertyPath: m_Name
@@ -8394,19 +8394,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2556757904575808591, guid: 1ec9e71ef72f7f4419df7c2260a958ba, type: 3}
       propertyPath: m_LocalBounds.m_Center.x
-      value: 5.3720503
+      value: 5.36975
       objectReference: {fileID: 0}
     - target: {fileID: 2556757904575808591, guid: 1ec9e71ef72f7f4419df7c2260a958ba, type: 3}
       propertyPath: m_LocalBounds.m_Center.y
-      value: -0.6040499
+      value: -0.6007998
       objectReference: {fileID: 0}
     - target: {fileID: 2556757904575808591, guid: 1ec9e71ef72f7f4419df7c2260a958ba, type: 3}
       propertyPath: m_LocalBounds.m_Extent.x
-      value: 22.20205
+      value: 22.20665
       objectReference: {fileID: 0}
     - target: {fileID: 2556757904575808591, guid: 1ec9e71ef72f7f4419df7c2260a958ba, type: 3}
       propertyPath: m_LocalBounds.m_Extent.y
-      value: 6.0232496
+      value: 6.0278997
       objectReference: {fileID: 0}
     - target: {fileID: 7240982446478584390, guid: 1ec9e71ef72f7f4419df7c2260a958ba, type: 3}
       propertyPath: m_Name

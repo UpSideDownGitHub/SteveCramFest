@@ -186,6 +186,7 @@ public class Enemy : MonoBehaviour
         {
             if (Time.time > _timeOfNextFire && shoots)
             {
+                enemyAnimator.SetTrigger("Attack");
                 try
                 {
                     attack.Play();
