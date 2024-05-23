@@ -214,7 +214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 2033041444076598292}
-  col: {fileID: 0}
+  col: {fileID: 91801494667017713}
   ui: {fileID: 0}
   singlePlayer: 0
   floorCheckDistance: 0.55
@@ -233,6 +233,7 @@ MonoBehaviour:
   points: 0
   mainScene: MainMenu
   _movement: 0
+  _currentPlatform: {fileID: 0}
   _downPressed: 0
   _shootPressed: 0
   freeze: 0

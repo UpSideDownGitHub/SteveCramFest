@@ -15,10 +15,8 @@ MonoBehaviour:
   components:
   - {fileID: 2688302777127999604}
   - {fileID: 2412998193502863757}
-  - {fileID: 6128767383308567428}
   - {fileID: 5981436638206026940}
   - {fileID: 5891891363776047978}
-  - {fileID: 6234445928864552270}
 --- !u!114 &2412998193502863757
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -40,10 +38,10 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.457
+    m_Value: 0.449
   smoothness:
     m_OverrideState: 1
-    m_Value: 0.21
+    m_Value: 0.507
   rounded:
     m_OverrideState: 1
     m_Value: 0
@@ -135,77 +133,3 @@ MonoBehaviour:
   intensity:
     m_OverrideState: 1
     m_Value: 0.122
---- !u!114 &6128767383308567428
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 558a8e2b6826cf840aae193990ba9f2e, type: 3}
-  m_Name: ShadowsMidtonesHighlights
-  m_EditorClassIdentifier: 
-  active: 1
-  shadows:
-    m_OverrideState: 1
-    m_Value: {x: 0.76933527, y: 0.68692887, z: 1, w: 0}
-  midtones:
-    m_OverrideState: 1
-    m_Value: {x: 0.6382876, y: 1, z: 0.8644807, w: 0}
-  highlights:
-    m_OverrideState: 1
-    m_Value: {x: 0.86320025, y: 1, z: 0.8817982, w: 0}
-  shadowsStart:
-    m_OverrideState: 1
-    m_Value: 0
-  shadowsEnd:
-    m_OverrideState: 1
-    m_Value: 1.17
-  highlightsStart:
-    m_OverrideState: 1
-    m_Value: 0.55
-  highlightsEnd:
-    m_OverrideState: 1
-    m_Value: 1
---- !u!114 &6234445928864552270
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdfbdbb87d3286943a057f7791b43141, type: 3}
-  m_Name: ChannelMixer
-  m_EditorClassIdentifier: 
-  active: 1
-  redOutRedIn:
-    m_OverrideState: 1
-    m_Value: 200
-  redOutGreenIn:
-    m_OverrideState: 1
-    m_Value: 52
-  redOutBlueIn:
-    m_OverrideState: 1
-    m_Value: -55
-  greenOutRedIn:
-    m_OverrideState: 1
-    m_Value: -94
-  greenOutGreenIn:
-    m_OverrideState: 1
-    m_Value: 100
-  greenOutBlueIn:
-    m_OverrideState: 1
-    m_Value: 0
-  blueOutRedIn:
-    m_OverrideState: 1
-    m_Value: 2
-  blueOutGreenIn:
-    m_OverrideState: 1
-    m_Value: 0
-  blueOutBlueIn:
-    m_OverrideState: 1
-    m_Value: 100

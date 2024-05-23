@@ -68,11 +68,8 @@ public class PlayerAttack : MonoBehaviour
 
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-
-        if (player._movement >= 0)
-            Instantiate(reboudEffects[(int)toSpawn], spawnPosition, Quaternion.identity);
-        else
-            Instantiate(reboudEffects[(int)toSpawn], spawnPosition, Quaternion.Euler(0, 0, -180f));
+        var spawnEffect = Instantiate(reboudEffects[(int)toSpawn], spawnPosition, Quaternion.identity);
+        spawnEffect.transform.rotation = Quaternion.Euler(0, 0, angle);
 
         switch (toSpawn)
         {
