@@ -104,7 +104,7 @@ public class Player : MonoBehaviour
             RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, -transform.up, floorCheckDistance);
             foreach (var hit in hits)
             {
-                if (hit.collider.CompareTag("Ground"))
+                if (hit.collider.CompareTag("Ground") || hit.collider.CompareTag("Hazard"))
                 {
                     currentJumps = jumpCount;
                     return true; 

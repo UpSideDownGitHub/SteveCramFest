@@ -225,7 +225,7 @@ MonoBehaviour:
   platformLayer: 6
   passthroughTime: 0.5
   sword: {fileID: 6714760833760140316}
-  attackTime: 0.5
+  attackTime: 0.1
   maxHealth: 5
   currentHealth: 5
   iframeTime: 0.2
@@ -233,7 +233,6 @@ MonoBehaviour:
   points: 0
   mainScene: MainMenu
   _movement: 0
-  _currentPlatform: {fileID: 0}
   _downPressed: 0
   _shootPressed: 0
   freeze: 0
