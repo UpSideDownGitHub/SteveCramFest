@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Intensity: 2.38
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: f177335300000000
+  m_ApplyToSortingLayers: f1773353000000007b2a4025
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 1
@@ -66,8 +66,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 5.37055, y: -0.5938499, z: 0}
-    m_Extent: {x: 22.21355, y: 6.0223503, z: 0}
+    m_Center: {x: 5.3727007, y: -0.5985501, z: 0}
+    m_Extent: {x: 22.2156, y: 6.01985, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0

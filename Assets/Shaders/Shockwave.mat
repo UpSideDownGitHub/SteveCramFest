@@ -66,13 +66,15 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Distance: 7.98
+    - _Distance: -0.5
     - _EnableExternalAlpha: 0
-    - _Size: 2.13
-    - _Strength: 2.88
+    - _ShockWaveStrength: -0.1
+    - _Size: 0.05
+    - _Strength: 1
+    - _WaveDistanceFromCenter: -0.1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-    - _SpawnPosition: {r: 2.71, g: 7.88, b: 0, a: 0}
+    - _SpawnPosition: {r: 0.5, g: 0.5, b: 0, a: 0}
   m_BuildTextureStacks: []
