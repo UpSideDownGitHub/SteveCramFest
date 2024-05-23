@@ -155,6 +155,7 @@ public class Enemy : MonoBehaviour
         }
         if (!shoots)
         {
+
             RaycastHit2D hitRight;
             if (movingRight)
                 hitRight = Physics2D.Raycast(directionCheck.transform.position, directionCheck.transform.right, meleeDistance);
@@ -167,7 +168,9 @@ public class Enemy : MonoBehaviour
                 {
                     inRange = true;
                     AttackAnimation();
+
                 }
+
             }
             else
                 inRange = false;
