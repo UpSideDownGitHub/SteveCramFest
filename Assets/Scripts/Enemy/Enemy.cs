@@ -1,5 +1,6 @@
 using JetBrains.Annotations;
 using System.Collections;
+using System.Collections.Generic;
 using System.Threading;
 using TMPro;
 using UnityEngine;
@@ -65,6 +66,9 @@ public class Enemy : MonoBehaviour
 
     [Header("Powerups")]
     public GameObject[] powerups;
+
+    [Header("Shoot")]
+    public AudioSource attack;
 
     public void Start()
     {
@@ -181,6 +185,7 @@ public class Enemy : MonoBehaviour
         {
             if (Time.time > _timeOfNextFire && shoots)
             {
+                attack.Play();
                 var dir = player.transform.position - firePoint.transform.position;
                 dir.Normalize();
                 RaycastHit2D[] hits = Physics2D.RaycastAll(firePoint.transform.position, dir);
@@ -202,9 +207,10 @@ public class Enemy : MonoBehaviour
 
     private void AttackAnimation()
     {
-        enemyAnimator.SetTrigger("Attack");
         if (moveSpeed == 0)
             return;
+        attack.Play();
+        enemyAnimator.SetTrigger("Attack");
         moveSpeed = 0;
         StartCoroutine(StartRun());
     }

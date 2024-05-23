@@ -58,6 +58,11 @@ public class Player : MonoBehaviour
     [Header("Quitting")]
     public string mainScene;
 
+    [Header("Sounds")]
+    public AudioSource jump;
+    public AudioSource attack;
+    public AudioSource hit;
+
     [HideInInspector] public float _movement;
     private Collider2D _currentPlatform;
     private float _scale;
@@ -187,7 +192,7 @@ public class Player : MonoBehaviour
     {
         if (invinsable)
             return;
-
+        hit.Play();
         currentHealth = currentHealth - 1 <= 0 ? 0 : currentHealth - 1;
         ui.SetHearts(currentHealth);
         invinsable = true;
@@ -296,6 +301,7 @@ public class Player : MonoBehaviour
 
         if (Grounded || currentJumps > 0)
         {
+            jump.Play();
             anim1.SetTrigger("Jump");
             anim2.SetTrigger("Jump");
 

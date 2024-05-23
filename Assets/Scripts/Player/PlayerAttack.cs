@@ -32,11 +32,13 @@ public class PlayerAttack : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
+            player.attack.Play();
             collision.GetComponent<Enemy>().TakeDamage(baseAttackDamage);
             player.AddPoints(100);
         }
         else if (collision.gameObject.layer == bulletLayer)
         {
+            player.attack.Play();
             player.screenShake.TriggerShake();
             player.slashAnim.SetTrigger("Parry");
 
