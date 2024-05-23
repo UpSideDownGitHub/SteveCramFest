@@ -34,6 +34,9 @@ public class Player : MonoBehaviour
     public float attackTime;
     public Queue<BulletType> parryList = new();
     public Animator slashAnim;
+    public GameObject parryEffect;
+    public SpriteRenderer parryEffectRenderer;
+    public float parryEffectTime;
     private float _timeOfNextAttack;
 
     [Header("Health")]
@@ -122,11 +125,31 @@ public class Player : MonoBehaviour
 
         screenShake = Camera.main.gameObject.GetComponent<ScreenShake>();
 
+        parryEffect = GameObject.FindGameObjectWithTag("ParryDistort");
+        parryEffectRenderer = GameObject.FindGameObjectWithTag("ParryDistort").GetComponent<SpriteRenderer>();
+
         var playerInput = GetComponent<PlayerInput>();
         ui = GameObject.FindGameObjectWithTag("UI" + playerInput.user.index.ToString()).GetComponent<UI>();
         ui.SetScore(points);
         ui.SetPowerups(parryList.ToArray());
         ui.SetHearts(currentHealth);
+    }
+
+    public void callVanish()
+    {
+        StartCoroutine(Vanish());
+    }
+
+    public IEnumerator Vanish()
+    {
+        float elapsedTime = 0f;
+        while (elapsedTime < parryEffectTime)
+        {
+            elapsedTime += Time.deltaTime;
+            float lerpedDissolve = Mathf.Lerp(-0.1f, 1f, (elapsedTime / parryEffectTime));
+            parryEffectRenderer.material.SetFloat("_WaveDistanceFromCenter", lerpedDissolve);
+            yield return null;
+        }
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
@@ -139,6 +162,11 @@ public class Player : MonoBehaviour
             if (!collision.gameObject.CompareTag("Hazard"))
                 Destroy(collision.gameObject);
         }
+    }
+
+    public void GiveIFrames()
+    {
+        _timeOfNoIFrame = Time.time + iframeTime;
     }
 
     public void TakeDamage()
@@ -171,8 +199,9 @@ public class Player : MonoBehaviour
     {
         if (collision.CompareTag("Pickup"))
         {
-            if (parryList.Count < 3)
+            if (parryList.Count < 3 && !collision.GetComponent<Pickup>().pickedUp)
             {
+                collision.GetComponent<Pickup>().pickedUp = true;
                 parryList.Enqueue(collision.GetComponent<Pickup>().type);
                 ui.SetPowerups(parryList.ToArray());
                 collision.gameObject.GetComponent<Animator>().SetTrigger("Pick Up");

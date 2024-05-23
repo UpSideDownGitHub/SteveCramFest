@@ -40,6 +40,10 @@ public class PlayerAttack : MonoBehaviour
             player.screenShake.TriggerShake();
             player.slashAnim.SetTrigger("Parry");
 
+            // PARRY 
+            player.parryEffect.transform.position = transform.position;
+            player.callVanish();
+
             // reflect the bullet
             var bulletRB = collision.GetComponent<Rigidbody2D>();
             var bulletProj = collision.GetComponent<Projectile>();

@@ -218,19 +218,22 @@ MonoBehaviour:
   col: {fileID: 91801494667017713}
   ui: {fileID: 0}
   singlePlayer: 0
-  floorCheckDistance: 0.55
+  floorCheckDistance: 0.6
   jumpForce: 30
   jumpCount: 2
   movementSpeed: 10000
   maxSpeed: 9
   platformLayer: 6
-  passthroughTime: 0.1
+  passthroughTime: 0.2
   sword: {fileID: 6714760833760140316}
   attackTime: 0.2
   slashAnim: {fileID: 8588058861045516083}
+  parryEffect: {fileID: 0}
+  parryEffectRenderer: {fileID: 0}
+  parryEffectTime: 1
   maxHealth: 5
   currentHealth: 5
-  iframeTime: 0.2
+  iframeTime: 2
   invinsable: 0
   points: 0
   mainScene: MainMenu

@@ -62,7 +62,10 @@ public class Manager : MonoBehaviour
         {
             Destroy(pickups[i]);
         }
-
+        foreach (var player in players)
+        {
+            player.GetComponent<Player>().invinsable = true;
+        }
         yield return new WaitForSeconds(0.5f);
         foreach (var player in players)
         {
@@ -77,5 +80,9 @@ public class Manager : MonoBehaviour
         changingLevel = false;
         currentLevel.GetComponent<LevelManager>().spawnDoor.GetComponent<Animator>().SetTrigger("Open");
         currentLevel.GetComponent<LevelManager>().spawnDoor.GetComponent<Animator>().SetTrigger("Close");
+        foreach (var player in players)
+        {
+            player.GetComponent<Player>().GiveIFrames();
+        }
     }
 }
